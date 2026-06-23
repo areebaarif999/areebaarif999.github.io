@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Areeba Arif - Content Strategist, Co Growth Strategist & E-Commerce Growth Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --deep-red: #C41E3A;
+            --bright-red: #FF3A47;
+            --dark-bg: #0a0a0a;
+            --darker-bg: #000000;
+            --white: #FFFFFF;
+            --light-gray: #E8E8E8;
+            --text-light: #F0F0F0;
+            --accent-red: #E63946;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(196, 30, 58, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--bright-red);
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--bright-red);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--deep-red), var(--bright-red));
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--darker-bg) 0%, #1a1a1a 50%, var(--dark-bg) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--deep-red) 0%, transparent 70%);
+            opacity: 0.15;
+            animation: float 8s ease-in-out infinite;
+            filter: blur(40px);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--bright-red) 0%, transparent 70%);
+            opacity: 0.08;
+            animation: float 10s ease-in-out infinite reverse;
+            filter: blur(40px);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(30px) translateX(20px); }
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            text-align: center;
+            z-index: 1;
+            animation: slideUp 0.8s ease-out;
+            padding: 2rem;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--deep-red), var(--bright-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.8rem;
+            color: var(--light-gray);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .hero .description {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            color: rgba(240, 240, 240, 0.8);
+            max-width: 750px;
+            margin: 0 auto 3rem;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--deep-red), var(--bright-red));
+            color: var(--white);
+            box-shadow: 0 20px 50px rgba(196, 30, 58, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 70px rgba(196, 30, 58, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--white);
+            border: 2px solid var(--deep-red);
+            box-shadow: 0 0 20px rgba(196, 30, 58, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: var(--deep-red);
+            box-shadow: 0 20px 50px rgba(196, 30, 58, 0.4);
+            transform: translateY(-5px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section */
+        .section {
+            padding: 7rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 1rem;
+            text-align: center;
+            letter-spacing: -1px;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, var(--deep-red), var(--bright-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: rgba(240, 240, 240, 0.7);
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a1a 100%);
+            border-top: 1px solid rgba(196, 30, 58, 0.1);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .about-text p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: rgba(240, 240, 240, 0.8);
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .highlight-card {
+            background: linear-gradient(135deg, rgba(196, 30, 58, 0.1), rgba(255, 58, 71, 0.05));
+            padding: 2rem;
+            border-left: 4px solid var(--deep-red);
+            border-radius: 12px;
+            border: 1px solid rgba(196, 30, 58, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+            animation: highlightBounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+
+        @keyframes highlightBounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .highlight-card:nth-child(1) { animation-delay: 0.1s; }
+        .highlight-card:nth-child(2) { animation-delay: 0.2s; }
+        .highlight-card:nth-child(3) { animation-delay: 0.3s; }
+        .highlight-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .highlight-card:hover {
+            border-color: var(--bright-red);
+            box-shadow: 0 20px 50px rgba(196, 30, 58, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .highlight-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--deep-red), var(--bright-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .highlight-text {
+            color: rgba(240, 240, 240, 0.8);
+            margin-top: 0.8rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Experience Section */
+        .experience {
+            background: var(--dark-bg);
+            border-top: 1px solid rgba(196, 30, 58, 0.1);
+        }
+
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .experience-card {
+            background: linear-gradient(135deg, rgba(196, 30, 58, 0.05), rgba(255, 58, 71, 0.02));
+            border: 1px solid rgba(196, 30, 58, 0.2);
+            padding: 2.5rem;
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            animation: expFadeInLeft 0.6s ease-out forwards;
+        }
+
+        @keyframes expFadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .experience-card:nth-child(1) { animation-delay: 0.1s; }
+        .experience-card:nth-child(2) { animation-delay: 0.2s; }
+        .experience-card:nth-child(3) { animation-delay: 0.3s; }
+        .experience-card:nth-child(4) { animation-delay: 0.4s; }
+        .experience-card:nth-child(5) { animation-delay: 0.5s; }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(196, 30, 58, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .experience-card:hover::before {
+            left: 100%;
+        }
+
+        .experience-card:hover {
+            border-color: var(--bright-red);
+            background: linear-gradient(135deg, rgba(196, 30, 58, 0.15), rgba(255, 58, 71, 0.08));
+            box-shadow: 0 30px 80px rgba(196, 30, 58, 0.3);
+            transform: translateY(-15px) scale(1.02);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+            gap: 2rem;
+        }
+
+        .exp-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -0.5px;
+        }
+
+        .exp-company {
+            background: linear-gradient(135deg, var(--deep-red), var(--bright-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .exp-date {
+            background: linear-gradient(135deg, rgba(196, 30, 58, 0.2), rgba(255, 58, 71, 0.1));
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            color: var(--light-gray);
+            white-space: nowrap;
+            border: 1px solid rgba(196, 30, 58, 0.3);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .exp-location {
+            color: rgba(240, 240, 240, 0.7);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .exp-bullets {
+            list-style: none;
+        }
+
+        .exp-bullets li {
+            color: rgba(240, 240, 240, 0.8);
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            line-height: 1.8;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .exp-bullets li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            background: linear-gradient(135deg, var(--deep-red), var(--bright-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a1a 100%);
+            border-top: 1px solid rgba(196, 30, 58, 0.1);
+        }
+
+        .skills .section-title {
+            color: var(--white);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, rgba(196, 30, 58, 0.1), rgba(255, 58, 71, 0.05));
+            border: 1px solid rgba(196, 30, 58, 0.3);
+            padding: 2.5rem;
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backdrop-filter: blur(10px);
+            animation: skillFadeInUp 0.6s ease-out forwards;
+        }
+
+        @keyframes skillFadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .skill-category:nth-child(1) { animation-delay: 0.1s; }
+        .skill-category:nth-child(2) { animation-delay: 0.2s; }
+        .skill-category:nth-child(3) { animation-delay: 0.3s; }
+        .skill-category:nth-child(4) { animation-delay: 0.4s; }
+        .skill-category:nth-child(5) { animation-delay: 0.5s; }
+        .skill-category:nth-child(6) { animation-delay: 0.6s; }
+
+        .skill-category:hover {
+            border-color: var(--bright-red);
+            background: linear-gradient(135deg, rgba(196, 30, 58, 0.2), rgba(255, 58, 71, 0.1));
+            box-shadow: 0 30px 80px rgba(196, 30, 58, 0.3);
+            transform: translateY(-10px) rotateX(5deg);
+        }
+
+        .skill-category h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--deep-red), var(--bright-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, var(--deep-red), var(--bright-red));
+            color: var(--white);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.2);
+        }
+
+        .skill-item:hover {
+            transform: scale(1.08) translateY(-3px);
+            box-shadow: 0 15px 40px rgba(196, 30, 58, 0.4);
+        }
+
+        /* Projects Section */
+        .projects {
+            background: var(--dark-bg);
+            border-top: 1px solid rgba(196, 30, 58, 0.1);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, rgba(196, 30, 58, 0.08), rgba(255, 58, 71, 0.03));
+            border: 1px solid rgba(196, 30, 58, 0.2);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+            position: relative;
+            backdrop-filter: blur(10px);
+            animation: cardFadeInUp 0.6s ease-out forwards;
+            padding: 2.5rem;
+        }
+
+        @keyframes cardFadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-card:hover {
+            transform: translateY(-25px) perspective(1000px) rotateX(5deg);
+            border-color: var(--bright-red);
+            box-shadow: 0 50px 100px rgba(196, 30, 58, 0.35), 0 0 40px rgba(196, 30, 58, 0.2);
+            background: linear-gradient(135deg, rgba(196, 30, 58, 0.15), rgba(255, 58, 71, 0.1));
+        }
+
+
+
+        .project-content {
+            padding: 2.5rem;
+        }
+
+        .project-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .project-desc {
+            color: rgba(240, 240, 240, 0.8);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+        }
+
+        .project-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+        }
+
+        .project-skill {
+            background: rgba(196, 30, 58, 0.2);
+            color: var(--bright-red);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(196, 30, 58, 0.4);
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .project-skill:hover {
+            background: var(--deep-red);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(180deg, #1a1a1a 0%, var(--dark-bg) 100%);
+            color: var(--white);
+            text-align: center;
+            border-top: 1px solid rgba(196, 30, 58, 0.1);
+        }
+
+        .contact-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: rgba(240, 240, 240, 0.8);
+            font-weight: 300;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .contact-method {
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(196, 30, 58, 0.1), rgba(255, 58, 71, 0.05));
+            border: 2px solid rgba(196, 30, 58, 0.3);
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backdrop-filter: blur(10px);
+            animation: contactFadeInUp 0.6s ease-out forwards;
+        }
+
+        @keyframes contactFadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-method:nth-child(1) { animation-delay: 0.1s; }
+        .contact-method:nth-child(2) { animation-delay: 0.2s; }
+        .contact-method:nth-child(3) { animation-delay: 0.3s; }
+
+        .contact-method:hover {
+            border-color: var(--bright-red);
+            background: linear-gradient(135deg, var(--deep-red), var(--bright-red));
+            transform: translateY(-15px);
+            box-shadow: 0 30px 80px rgba(196, 30, 58, 0.4);
+        }
+
+        .contact-method h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .contact-method a {
+            color: var(--bright-red);
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .contact-method:hover a {
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
+            transition: transform 0.3s;
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+
+        @keyframes floatIcon {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .contact-method:hover .contact-icon {
+            transform: scale(1.2) rotateY(10deg);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker-bg);
+            color: rgba(240, 240, 240, 0.6);
+            text-align: center;
+            padding: 2.5rem;
+            border-top: 1px solid rgba(196, 30, 58, 0.1);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: var(--bright-red);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.4rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+            }
+
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .exp-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--deep-red), var(--bright-red));
+            border-radius: 6px;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+        .project-card:nth-child(5) { animation-delay: 0.5s; }
+        .project-card:nth-child(6) { animation-delay: 0.6s; }
+        .project-card:nth-child(7) { animation-delay: 0.7s; }
+        .project-card:nth-child(8) { animation-delay: 0.8s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">Areeba Arif</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>I Help Brands <span>Scale Through Strategic Content</span></h1>
+            <p class="subtitle">Content Strategist & E-Commerce Growth Specialist</p>
+            <p class="description">
+                With hands-on experience scaling e-commerce businesses, optimizing conversions, and building high-ROI marketing campaigns across Shopify, Amazon, and global markets. Expert in content strategy, copywriting, social media, and brand growth.
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-title">About <span>Me</span></div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Results-Driven Content Strategist</h3>
+                    <p>
+                        I help e-commerce brands grow by creating strategies that actually work. Whether it's building content calendars, writing copy that converts, or managing campaigns - I focus on results, not just effort. I've worked with 9+ brands, run my own business, and learned that the best marketing is the kind that solves real problems for real people.
+                    </p>
+                    <p>
+                        From founding and scaling my own e-commerce store (Bell & Buy) achieving 80% growth, to managing high-impact projects for international brands, I bring hands-on experience in content creation, copywriting, design, and digital marketing.
+                    </p>
+                    <p>
+                        My expertise spans Shopify optimization, email marketing (Klaviyo, Brevo), organic social media management, and comprehensive brand strategy—all focused on driving measurable business results and sustainable growth.
+                    </p>
+                </div>
+                <div class="highlights">
+                    <div class="highlight-card">
+                        <div class="highlight-number">80%</div>
+                        <div class="highlight-text">Sales Growth<br>(Bell & Buy)</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-number">35%</div>
+                        <div class="highlight-text">Email<br>Open Rates</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-number">+30%</div>
+                        <div class="highlight-text">Mobile<br>Conversions</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-number">9+</div>
+                        <div class="highlight-text">E-Commerce<br>Clients</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-title">Professional <span>Experience</span></div>
+            <div class="section-subtitle">Building, scaling, and innovating across content strategy and e-commerce</div>
+            
+            <div class="experience-list">
+                <!-- Current Role -->
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Project Manager & Client Success Lead</div>
+                            <div class="exp-company">The Emissary Agency</div>
+                        </div>
+                        <div class="exp-date">Jul 2025 – Present</div>
+                    </div>
+                    <div class="exp-location">🌍 Remote – USA</div>
+                    <ul class="exp-bullets">
+                        <li>Work with e-commerce brands on strategy and execution - basically I'm the bridge between the client's vision and what actually gets done</li>
+                        <li>Build content strategies that people actually want to read (not just stuff that ranks on Google)</li>
+                        <li>Run A/B tests on Shopify stores - the kind of work where +30% conversions = real wins</li>
+                        <li>Send emails that people open (35% open rate is solid when most brands are at 15%)</li>
+                        <li>Keep everyone on the same page - designers, devs, writers - because miscommunication kills projects</li>
+                    </ul>
+                </div>
+
+                <!-- ShipMagz -->
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Social Media & Email Marketing Executive</div>
+                            <div class="exp-company">ShipMagz</div>
+                        </div>
+                        <div class="exp-date">Aug 2025 – Jun 2026</div>
+                    </div>
+                    <div class="exp-location">🌍 Remote – Germany</div>
+                    <ul class="exp-bullets">
+                        <li>Managed social media for a global logistics company - which sounds boring but it's actually about making shipping interesting to people</li>
+                        <li>Built content calendars that actually made sense - not just random posts, but a real strategy</li>
+                        <li>Tracked what's working, what's not, and doubled down on winners using Google Analytics</li>
+                        <li>Designed and sent email campaigns that converted - using Brevo, testing subject lines, the whole thing</li>
+                        <li>Made videos with CapCut and HeyGen for social media - because static posts are boring in 2024</li>
+                    </ul>
+                </div>
+
+                <!-- Bell & Buy -->
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Owner & E-Commerce Manager</div>
+                            <div class="exp-company">Bell & Buy (Founder)</div>
+                        </div>
+                        <div class="exp-date">Jan 2024 – Dec 2024</div>
+                    </div>
+                    <div class="exp-location">🌍 UAE Market</div>
+                    <ul class="exp-bullets">
+                        <li>Started my own e-commerce business - built it from zero to 80% sales growth in one year</li>
+                        <li>Handled everything: product sourcing, listing optimization, selling on Amazon and Shopify</li>
+                        <li>Ran Meta Ads and TikTok campaigns that actually made money - not just got views</li>
+                        <li>Learned the hard way what sells and what doesn't. Some lessons cost money, but they stick</li>
+                    </ul>
+                </div>
+
+                <!-- PACE Online School -->
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Video Content Creator & Teaching Instructor</div>
+                            <div class="exp-company">PACE Online School</div>
+                        </div>
+                        <div class="exp-date">May 2025 – Oct 2025</div>
+                    </div>
+                    <div class="exp-location">🌍 Pakistan & Saudi Arabia</div>
+                    <ul class="exp-bullets">
+                        <li>Made videos and reels with CapCut to get students to sign up - worked better than traditional ads</li>
+                        <li>Taught kids from grade 1 to 10 - both online and in-person. Every grade has different needs</li>
+                        <li>Managed the whole student experience - tests, progress tracking, keeping parents updated</li>
+                    </ul>
+                </div>
+
+                <!-- OHSPS -->
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Academic Research Writer</div>
+                            <div class="exp-company">OHSPS Inc.</div>
+                        </div>
+                        <div class="exp-date">Mar 2021 – Dec 2023</div>
+                    </div>
+                    <div class="exp-location">🌍 Remote – Saudi Arabia</div>
+                    <ul class="exp-bullets">
+                        <li>Wrote academic research for specialized courses (NEBOSH, NVQ, IOSH) - technical stuff but had to make it clear</li>
+                        <li>Built content strategies for students around the world working on different qualifications</li>
+                        <li>Met tight deadlines, followed strict academic standards - no shortcuts allowed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="section projects" id="case-studies">
+        <div class="container">
+            <div class="section-title">Deep-Dive <span>Case Studies</span></div>
+            <div class="section-subtitle">Real projects with real results - see how I approach strategy, execution, and growth</div>
+            
+            <div class="projects-grid">
+                <!-- Case Study 1 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">Melting Forest</div>
+                        <div class="project-desc">Built their entire content strategy from zero. Taught them how to tell their sustainability story in a way customers actually cared about. Result: 187% follower growth, 35% email open rates, $47K email revenue.</div>
+                        <div class="project-skills">
+                            <span class="project-skill">Content Strategy</span>
+                            <span class="project-skill">Email Marketing</span>
+                            <span class="project-skill">Growth Marketing</span>
+                        </div>
+                        <div style="margin-top: 1.5rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                            <a href="CASE_STUDY_1_MELTING_FOREST.html" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block; background: rgba(196, 30, 58, 0.1);">📊 Read Full Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">CBD Living</div>
+                        <div class="project-desc">Repositioned them as premium brand through strategic copywriting and design systems. Rewrote product pages, built Figma design system, created email templates. Result: 23% conversion increase, 42% email improvement, $89K revenue.</div>
+                        <div class="project-skills">
+                            <span class="project-skill">Copywriting</span>
+                            <span class="project-skill">Figma Design</span>
+                            <span class="project-skill">Premium Positioning</span>
+                        </div>
+                        <div style="margin-top: 1.5rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                            <a href="CASE_STUDY_2_CBD_LIVING.html" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block; background: rgba(196, 30, 58, 0.1);">📊 Read Full Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">Owl & Ox</div>
+                        <div class="project-desc">Complete brand repositioning from commodity to luxury lifestyle. Changed messaging, target audience, pricing strategy. Result: 156% revenue growth, 54% price increase capability, 3.2x higher customer lifetime value.</div>
+                        <div class="project-skills">
+                            <span class="project-skill">Brand Strategy</span>
+                            <span class="project-skill">Growth Strategy</span>
+                            <span class="project-skill">Market Positioning</span>
+                        </div>
+                        <div style="margin-top: 1.5rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                            <a href="CASE_STUDY_3_OWL_AND_OX.html" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block; background: rgba(196, 30, 58, 0.1);">📊 Read Full Case Study</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-title">Core <span>Competencies</span></div>
+            <div class="section-subtitle">A comprehensive toolkit for building and scaling brands globally</div>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>📝 Content & Copywriting</h4>
+                    <div class="skill-items">
+                        <span class="skill-item">Content Strategy</span>
+                        <span class="skill-item">Copywriting</span>
+                        <span class="skill-item">Web Content</span>
+                        <span class="skill-item">Email Copy</span>
+                        <span class="skill-item">Product Descriptions</span>
+                        <span class="skill-item">Content Calendars</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>📱 Social Media & Digital</h4>
+                    <div class="skill-items">
+                        <span class="skill-item">Facebook</span>
+                        <span class="skill-item">Instagram</span>
+                        <span class="skill-item">LinkedIn</span>
+                        <span class="skill-item">TikTok</span>
+                        <span class="skill-item">Meta Ads</span>
+                        <span class="skill-item">Google Analytics</span>
+                        <span class="skill-item">Email Marketing</span>
+                        <span class="skill-item">SEO</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>🎨 Design & Creative</h4>
+                    <div class="skill-items">
+                        <span class="skill-item">Figma</span>
+                        <span class="skill-item">Canva</span>
+                        <span class="skill-item">CapCut</span>
+                        <span class="skill-item">HeyGen</span>
+                        <span class="skill-item">Video Editing</span>
+                        <span class="skill-item">UI/UX Design</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>🛒 E-Commerce</h4>
+                    <div class="skill-items">
+                        <span class="skill-item">Shopify</span>
+                        <span class="skill-item">Amazon Seller</span>
+                        <span class="skill-item">Product Optimization</span>
+                        <span class="skill-item">FBA/FBM</span>
+                        <span class="skill-item">CRO</span>
+                        <span class="skill-item">Store Audits</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>👥 Team & Project</h4>
+                    <div class="skill-items">
+                        <span class="skill-item">Team Leadership</span>
+                        <span class="skill-item">Asana</span>
+                        <span class="skill-item">Monday.com</span>
+                        <span class="skill-item">Notion</span>
+                        <span class="skill-item">Slack</span>
+                        <span class="skill-item">Client Management</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>🧠 Tools & Platforms</h4>
+                    <div class="skill-items">
+                        <span class="skill-item">Klaviyo</span>
+                        <span class="skill-item">Brevo</span>
+                        <span class="skill-item">ChatGPT</span>
+                        <span class="skill-item">Google Workspace</span>
+                        <span class="skill-item">Zoom</span>
+                        <span class="skill-item">Gemini</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <div class="section-title">Notable <span>Client Work</span></div>
+            <div class="section-subtitle">I help online brands grow through smart content strategy, compelling copy, and data-driven marketing</div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">CBD Living</div>
+                        <div class="project-desc">Rewrote product pages and emails to sound premium, not generic. Used Figma to build a design system they could use forever. Result: 23% higher conversions and customers willing to pay more.</div>
+                        <div class="project-skills">
+                            <span class="project-skill">Copywriting</span>
+                            <span class="project-skill">Figma Design</span>
+                        </div>
+                        <div style="margin-top: 1.5rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                            <a href="https://cbdliving.com/" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">🌐 Website</a>
+                            <a href="CASE_STUDY_2_CBD_LIVING.html" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block; background: rgba(196, 30, 58, 0.1);">📊 Case Study</a>
+                            <a href="https://docs.google.com/document/d/1Pc1SCKfJBmvQ-WNZjaqPwQ8uxiTET5QYsbSBf6OnnjM/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 1</a>
+                            <a href="https://docs.google.com/document/d/19YjsROybMIow7TofZcvswjtl-3wtPzW0UAy4LjEN0xo/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 2</a>
+                            <a href="https://docs.google.com/document/d/13TB9BEhG1z0EKhBQN8Eslw8HS6EI4VUiunuarzA0XVk/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 3</a>
+                            <a href="https://docs.google.com/document/d/1D6iTkzUivuRV1PsLMpDs6gpUh2BDymXKz38KTnrfnE0/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 4</a>
+                            <a href="https://docs.google.com/document/d/11W68e8SujGnfm6FcgxJ6I9RqSLMHR-Xg531vFmjIcMs/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 5</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">Melting Forest</div>
+                        <div class="project-desc">Built their entire content strategy from scratch. Taught them how to tell their sustainability story in a way customers actually cared about. Grew followers 187% and made emails actually valuable.</div>
+                        <div class="project-skills">
+                            <span class="project-skill">Content Strategy</span>
+                            <span class="project-skill">Email Marketing</span>
+                        </div>
+                        <div style="margin-top: 1.5rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                            <a href="https://meltingforest.com/" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">🌐 Website</a>
+                            <a href="CASE_STUDY_1_MELTING_FOREST.html" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block; background: rgba(196, 30, 58, 0.1);">📊 Case Study</a>
+                            <a href="https://docs.google.com/document/d/12t_2RB3IXmqPpiFsF06DilZuyHOUQQxHeT387ipck-0/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 1</a>
+                            <a href="https://docs.google.com/document/d/1ofMEkIzvFJEPd3e4OvFpw_TeilGjzyiTCNKGX_NzWIY/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 2</a>
+                            <a href="https://docs.google.com/document/d/16GVaQKSYRkkRxQ6Igh53OLedab4LnNAglqC0b0VOCTc/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 3</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">Smoking Dog</div>
+                        <div class="project-desc">Rewrote product copy from technical to conversational. Made their brand voice consistent everywhere. Customers got it, and they understood why the products are worth the price.</div>
+                        <div class="project-skills">
+                            <span class="project-skill">Copywriting</span>
+                            <span class="project-skill">Brand Strategy</span>
+                        </div>
+                        <div style="margin-top: 1.5rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                            <a href="https://smokingdog.com/" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">🌐 Website</a>
+                            <a href="https://docs.google.com/document/d/1gGSlN-uswJQeJGEBNmA7BRWHoWB6-y0GAoh_SDsJnlg/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 1</a>
+                            <a href="https://docs.google.com/document/d/12xFagsaizs-LSbQDqKnPKBfpF9nbhZZsVfq7F4yW9Zc/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 2</a>
+                            <a href="https://docs.google.com/document/d/1mojrss1CksSvU82h3kZLi3lbUcfxmo2F9vibiUvdXyA/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 3</a>
+                            <a href="https://docs.google.com/document/d/1435ajfmJG3LoBBYPIW2uXyU5p4NzK2ro4goEc8EQhlk/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 4</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">Euphoric Herbals</div>
+                        <div class="project-desc">Created content strategies and email sequences that actually educated customers about why herbals matter. Built a content calendar they could run independently.</div>
+                        <div class="project-skills">
+                            <span class="project-skill">Content Calendars</span>
+                            <span class="project-skill">Email Flows</span>
+                        </div>
+                        <div style="margin-top: 1.5rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                            <a href="https://www.euphoricherbals.com/" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">🌐 Website</a>
+                            <a href="https://docs.google.com/document/d/1ItBc8pK2M2_HGmN7hO2YmGq4uDhEnHN5stJkLxMSulk/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 1</a>
+                            <a href="https://docs.google.com/document/d/1gG9tOsPv8CQJxgqCXeRyabDz1hU3rq6uIUvTPcgzad0/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 2</a>
+                            <a href="https://docs.google.com/document/d/1zH8HEbO5l_IvTRIS69Yve6kT0a38f2bqjJQhhCgP1tk/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 3</a>
+                            <a href="https://docs.google.com/document/d/1vsyGxpMeunfhSkECJQQbBH7hiLtXghvRxKOJvszQuqo/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 4</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">Owl & Ox</div>
+                        <div class="project-desc">Repositioned them from a commodity brand to luxury. Changed how they talked about products, who they targeted, everything. They raised prices 54%, revenue grew 156%, and customers became actual fans.</div>
+                        <div class="project-skills">
+                            <span class="project-skill">Brand Strategy</span>
+                            <span class="project-skill">Web Content</span>
+                        </div>
+                        <div style="margin-top: 1.5rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                            <a href="https://owlandox.co/" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">🌐 Website</a>
+                            <a href="CASE_STUDY_3_OWL_AND_OX.html" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block; background: rgba(196, 30, 58, 0.1);">📊 Case Study</a>
+                            <a href="https://docs.google.com/document/d/1nlMlaCcJKPII0N54ajvGqSQueCFrd4Lpk2a4lv1qItk/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 1</a>
+                            <a href="https://docs.google.com/document/d/1jq4pWvNUenB7v8Gi_ebHMo-0z0BoCiXTeezgUmCITWU/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 2</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">Blue Grass Vitamins</div>
+                        <div class="project-desc">Built their whole content and email strategy around helping people understand why vitamins matter. Made them sound expert, not salesy.</div>
+                        <div class="project-skills">
+                            <span class="project-skill">Email Marketing</span>
+                            <span class="project-skill">Content Strategy</span>
+                        </div>
+                        <div style="margin-top: 1.5rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                            <a href="https://www.bluegrassvitamins.com/" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">🌐 Website</a>
+                            <a href="https://docs.google.com/document/d/1gvtUg0yqlhe7pCMnNHGSr7uRsRw-dhQ4hzMfNp4fPS4/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 1</a>
+                            <a href="https://docs.google.com/document/d/14UIfX8XIHrtElPnG8K98ESuNamThWlFrOMPG6VQojYI/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 2</a>
+                            <a href="https://docs.google.com/document/d/1HNfkaaZ4R1HcJRBIMNzG3GEuuYaW0CHtdvv1PNXhrcw/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 3</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">Kaizen Electronics</div>
+                        <div class="project-desc">Translated technical specs into human language. Made electronics sound interesting to people who aren't tech nerds.</div>
+                        <div class="project-skills">
+                            <span class="project-skill">Technical Writing</span>
+                            <span class="project-skill">Copywriting</span>
+                        </div>
+                        <div style="margin-top: 1.5rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                            <a href="https://kaizenelectrics.com/" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">🌐 Website</a>
+                            <a href="https://docs.google.com/document/d/1YB4RdSX9Tju01sOhFlWA_hlCmFNHlSI4Z-c2SzBZ1gA/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">Mana Fest Health</div>
+                        <div class="project-desc">Created content that made health feel accessible, not preachy. Built email campaigns that people actually wanted to open.</div>
+                        <div class="project-skills">
+                            <span class="project-skill">Health Content</span>
+                            <span class="project-skill">Brand Positioning</span>
+                        </div>
+                        <div style="margin-top: 1.5rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                            <a href="https://manafesthealth.com/" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">🌐 Website</a>
+                            <a href="https://docs.google.com/document/d/1-u5VoRyrK9V_BjQ5BQBdNWhb295OOYv61GVH-mO_CH8/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 1</a>
+                            <a href="https://docs.google.com/document/d/1xci4hK48Cr9_mAb0flJY82iF2GtljpghoCqTHmnKF68/edit" target="_blank" style="color: var(--bright-red); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid var(--bright-red); border-radius: 15px; transition: all 0.3s; display: inline-block;">📄 Sample 2</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="section-title">Let's Work <span>Together</span></div>
+                <p>Got a project you're thinking about? Want to discuss strategy? Just want to chat about growth? Send me a message - I reply fast.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">📧</div>
+                        <h4>Email</h4>
+                        <a href="mailto:areebaarif999@gmail.com">areebaarif999@gmail.com</a>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">💬</div>
+                        <h4>WhatsApp</h4>
+                        <a href="https://wa.me/923104474940" target="_blank">+92 310 4474940</a>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">💼</div>
+                        <h4>LinkedIn</h4>
+                        <a href="https://linkedin.com/in/areebaarif" target="_blank">linkedin.com/in/areebaarif</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Areeba Arif. All rights reserved. | <a href="#about">Content Strategist, Co Growth Strategist & E-Commerce Growth Specialist</a></p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideUp 0.6s ease-out forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.experience-card, .project-card, .skill-category, .highlight-card').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+
+        // Add parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.backgroundPosition = `0 ${scrolled * 0.5}px`;
+            }
+        });
+    </script>
+</body>
+</html>
