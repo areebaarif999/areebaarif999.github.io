@@ -1,17 +1,33 @@
-# Ariba Arif Portfolio
-Welcome to my personal portfolio website!
+# Areeba Arif — Portfolio Website
 
-## About Me
+Personal portfolio for **Areeba Arif** — E-commerce Manager, Project Lead, Shopify Coordinator, and Content Strategist.
 
-E-commerce brands fail because they have no strategy—just effort.
+Live site: [https://areebaarif999.github.io/](https://areebaarif999.github.io/)
 
-I provide the strategy. You get the results: 
-- 35% email open rates (industry avg: 18%)
-- 23-187% growth across clients
-- $136K+ in tracked revenue
-- Brands that command premium pricing
+## What's included
 
-**You've tried everything. You need someone who actually knows what works.**
+- `index.html` — Main portfolio page
+- `styles.css` — Shared styles
 
-## Live Website
-https://areebaarif999.github.io/
+Case study section shows results only. All **website links** and **Google Docs writing samples** are in the Client Work section.
+
+## Deploy to GitHub Pages
+
+1. Push all files to your GitHub repo (`areebaarif999/areebaarif999.github.io` or any repo)
+2. Go to **Settings → Pages**
+3. Set source to **main** branch, folder **/ (root)**
+4. Save — site will be live in 1–2 minutes
+
+## Local preview
+
+Open `index.html` in a browser, or run:
+
+```bash
+python3 -m http.server 8765
+```
+
+Then visit `http://localhost:8765`
+
+## Positioning
+
+This portfolio positions Areeba as an **end-to-end e-commerce partner** — not just a copywriter. Highlights include project management, Shopify coordination, Canva/Figma design, SEO copy, Klaviyo email, and Amazon content.
