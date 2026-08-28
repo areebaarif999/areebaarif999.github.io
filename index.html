@@ -1,1884 +1,1802 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Areeba Arif — SEO Copywriter &amp; E-commerce Content Specialist</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#080202;
-    --bg-soft:#0d0303;
-    --red:#c41818;
-    --red-bright:#e13030;
-    --red-dim:#5c1010;
-    --white:#f5f2ee;
-    --gray:#b9b2ac;
-    --gray-dim:#8a827c;
-    --border:rgba(196,24,24,0.16);
-    --font-display: 'Playfair Display', Georgia, serif;
-    --font-body: 'Inter', -apple-system, sans-serif;
-  }
-
-  *{margin:0;padding:0;box-sizing:border-box;}
-
-  html{scroll-behavior:smooth;}
-
-  body{
-    background:var(--bg);
-    color:var(--white);
-    font-family:var(--font-body);
-    overflow-x:hidden;
-    position:relative;
-  }
-
-  /* ambient glows */
-  body::before{
-    content:'';
-    position:fixed;
-    top:-10%;
-    right:-10%;
-    width:600px;
-    height:600px;
-    background:radial-gradient(circle, rgba(196,24,24,0.18) 0%, rgba(196,24,24,0) 70%);
-    pointer-events:none;
-    z-index:0;
-  }
-
-  .glow-corner{
-    position:absolute;
-    bottom:-180px;
-    left:-180px;
-    width:420px;
-    height:420px;
-    border-radius:50%;
-    background:radial-gradient(circle at 60% 40%, rgba(196,24,24,0.35), rgba(196,24,24,0.08) 55%, transparent 75%);
-    border:1px solid rgba(196,24,24,0.4);
-    pointer-events:none;
-    z-index:0;
-  }
-
-  a{text-decoration:none;color:inherit;}
-
-  /* NAV */
-  header{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:rgba(8,2,2,0.85);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--border);
-  }
-
-  nav{
-    max-width:1400px;
-    margin:0 auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:22px 48px;
-  }
-
-  .logo{
-    font-family:var(--font-display);
-    font-weight:800;
-    font-size:1.8rem;
-    color:var(--red);
-    letter-spacing:0.5px;
-    transition:text-shadow .3s ease;
-  }
-  .logo:hover{text-shadow:0 0 18px rgba(196,24,24,0.55);}
-
-  .nav-links{
-    display:flex;
-    gap:40px;
-    list-style:none;
-  }
-
-  .nav-links a{
-    font-size:0.98rem;
-    font-weight:500;
-    color:var(--white);
-    transition:color .25s ease;
-    position:relative;
-    padding-bottom:4px;
-  }
-
-  .nav-links a::after{
-    content:'';
-    position:absolute;
-    left:0;
-    bottom:0;
-    width:0;
-    height:1px;
-    background:var(--red-bright);
-    transition:width .3s ease;
-  }
-
-  .nav-links a:hover{color:var(--red-bright);}
-  .nav-links a:hover::after{width:100%;}
-
-  .nav-toggle{
-    display:none;
-    flex-direction:column;
-    gap:5px;
-    background:none;
-    border:none;
-    cursor:pointer;
-    padding:8px;
-    z-index:200;
-  }
-  .nav-toggle span{
-    width:26px;
-    height:2px;
-    background:var(--white);
-    border-radius:2px;
-    transition:transform .25s ease, opacity .25s ease;
-  }
-  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-  .nav-toggle.open span:nth-child(2){opacity:0;}
-  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-
-  /* HERO */
-  .hero{
-    position:relative;
-    max-width:1200px;
-    margin:0 auto;
-    padding:90px 32px 70px;
-    text-align:center;
-    z-index:1;
-  }
-
-  .hero h1{
-    font-family:var(--font-display);
-    font-weight:900;
-    line-height:1.08;
-    font-size:clamp(2.6rem, 6vw, 4.6rem);
-    letter-spacing:-0.5px;
-  }
-
-  .hero h1 .line-white{color:var(--white);}
-  .hero h1 .line-red{color:var(--red);}
-
-  .hero .titles{
-    margin-top:34px;
-    font-size:clamp(1rem, 1.6vw, 1.3rem);
-    font-weight:500;
-    color:var(--white);
-  }
-
-  .hero .titles .sep{
-    color:var(--red);
-    margin:0 14px;
-  }
-
-  .hero-divider{
-    width:220px;
-    height:2px;
-    margin:20px auto;
-    background:linear-gradient(90deg, transparent, var(--red-bright), transparent);
-  }
-
-  .hero .tagline{
-    max-width:760px;
-    margin:0 auto;
-    color:var(--gray);
-    font-size:1.05rem;
-    line-height:1.7;
-  }
-
-  .hero .stack-line{
-    margin-top:18px;
-    color:var(--gray-dim);
-    font-size:0.95rem;
-    letter-spacing:0.5px;
-  }
-
-  /* TOOL ICON ROW */
-  .tool-row{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:14px;
-    margin:38px 0 34px;
-  }
-
-  .tool-box{
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    padding:14px 22px;
-    border:1px solid var(--red);
-    border-radius:10px;
-    background:rgba(15,4,4,0.6);
-    box-shadow:none;
-    transition:transform .25s ease, background .25s ease, box-shadow .25s ease;
-  }
-
-  .tool-box:hover{
-    transform:translateY(-4px);
-    background:rgba(196,24,24,0.1);
-    box-shadow:0 8px 24px rgba(196,24,24,0.25);
-  }
-
-  .tool-box span{
-    font-family:var(--font-body);
-    font-weight:600;
-    font-size:1rem;
-    color:var(--white);
-    white-space:nowrap;
-  }
-
-  .tool-box svg{flex-shrink:0;}
-  .tool-box.seo span{color:#2fbf5f;}
-
-  /* CTA BUTTONS */
-  .hero-ctas{
-    display:flex;
-    justify-content:center;
-    gap:18px;
-    flex-wrap:wrap;
-  }
-
-  .btn{
-    padding:16px 34px;
-    border-radius:8px;
-    font-weight:600;
-    font-size:1rem;
-    font-family:var(--font-body);
-    cursor:pointer;
-    transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease, background .3s ease, border-color .3s ease;
-    display:inline-block;
-    position:relative;
-    overflow:hidden;
-    isolation:isolate;
-  }
-
-  .btn::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.25) 50%, transparent 70%);
-    transform:translateX(-120%);
-    transition:transform .6s ease;
-    z-index:1;
-  }
-  .btn:hover::before{transform:translateX(120%);}
-
-  .btn-primary{
-    background:linear-gradient(180deg, var(--red-bright), var(--red));
-    color:var(--white);
-    border:1px solid var(--red-bright);
-    box-shadow:0 6px 20px rgba(196,24,24,0.35);
-  }
-
-  .btn-primary:hover{
-    transform:translateY(-3px);
-    box-shadow:0 12px 32px rgba(196,24,24,0.55);
-  }
-
-  .btn-outline{
-    background:transparent;
-    color:var(--white);
-    border:1px solid var(--red);
-  }
-
-  .btn-outline:hover{
-    background:rgba(196,24,24,0.14);
-    border-color:var(--red-bright);
-    transform:translateY(-3px);
-    box-shadow:0 10px 26px rgba(196,24,24,0.22);
-  }
-
-  .scroll-cue{
-    margin-top:56px;
-    display:flex;
-    justify-content:center;
-    color:var(--red);
-    animation:bob 2.2s ease-in-out infinite;
-  }
-
-  @keyframes bob{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(8px);}
-  }
-
-  @media (max-width:900px){
-    nav{padding:16px 20px;}
-    .logo{font-size:1.5rem;}
-    .nav-toggle{display:flex;}
-    .nav-links{
-      display:flex;
-      position:fixed;
-      top:64px;
-      left:0;
-      right:0;
-      flex-direction:column;
-      gap:0;
-      background:rgba(8,2,2,0.98);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--border);
-      max-height:0;
-      overflow:hidden;
-      transition:max-height .3s ease;
-    }
-    .nav-links.open{max-height:520px;}
-    .nav-links li{width:100%; border-top:1px solid var(--border);}
-    .nav-links a{
-      display:block;
-      padding:16px 24px;
-      font-size:1rem;
-    }
-    .hero{padding:60px 18px 50px;}
-    .tool-box{padding:10px 16px;}
-    .tool-box span{font-size:0.9rem;}
-  }
-
-  /* ===== SHARED SECTION SYSTEM ===== */
-  section.block{
-    position:relative;
-    padding:64px 32px;
-    z-index:1;
-  }
-  section.block.alt{background:var(--bg-soft);}
-  .inner{max-width:1200px; margin:0 auto;}
-  .inner.narrow{max-width:820px;}
-
-  .eyebrow{
-    color:var(--red-bright);
-    text-transform:uppercase;
-    letter-spacing:3px;
-    font-size:0.8rem;
-    font-weight:700;
-    margin-bottom:14px;
-  }
-
-  /* Scroll reveal */
-  .inner, .cta-section{
-    opacity:0;
-    transform:translateY(26px);
-    transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);
-  }
-  .inner.in-view, .cta-section.in-view{
-    opacity:1;
-    transform:translateY(0);
-  }
-
-  .sec-title{
-    font-family:var(--font-display);
-    font-weight:800;
-    font-size:clamp(1.9rem, 3.6vw, 2.7rem);
-    line-height:1.2;
-    color:var(--white);
-  }
-
-  .sec-title .accent{color:var(--red);}
-
-  .sec-lead{
-    margin-top:14px;
-    color:var(--gray);
-    font-size:1.02rem;
-    line-height:1.75;
-    max-width:760px;
-  }
-
-  .sec-lead strong{color:var(--white); font-weight:600;}
-
-  .insight-list{
-    margin:22px 0;
-    display:flex;
-    flex-direction:column;
-    gap:5px;
-  }
-  .insight-list li{
-    list-style:none;
-    color:var(--gray);
-    font-size:1.02rem;
-    padding-left:22px;
-    position:relative;
-  }
-  .insight-list li::before{
-    content:'—';
-    color:var(--red);
-    position:absolute;
-    left:0;
-  }
-
-  .subhead{
-    font-family:var(--font-display);
-    font-size:1.5rem;
-    font-weight:700;
-    color:var(--white);
-    margin:30px 0 20px;
-  }
-
-  .card-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(min(230px, 100%), 1fr));
-    gap:16px;
-  }
-
-  .two-col-cards{
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-  }
-
-  .card{
-    border:1px solid var(--border);
-    background:rgba(196,24,24,0.025);
-    border-radius:12px;
-    padding:22px 20px;
-    transition:border-color .25s ease, transform .25s ease, background .25s ease;
-  }
-  .card:hover{
-    border-color:var(--red);
-    background:rgba(196,24,24,0.06);
-    transform:translateY(-4px);
-  }
-  .card h3{
-    font-family:var(--font-display);
-    font-size:1.2rem;
-    color:var(--white);
-    margin-bottom:10px;
-  }
-  .card p{color:var(--gray); font-size:0.93rem; line-height:1.65;}
-
-  .icon-badge{
-    width:36px; height:36px;
-    border:1px solid rgba(196,24,24,0.4);
-    border-radius:9px;
-    display:flex; align-items:center; justify-content:center;
-    color:var(--red-bright);
-    font-family:var(--font-display);
-    font-weight:700;
-    font-size:0.95rem;
-    margin-bottom:12px;
-  }
-
-  /* pillars (Get Found / Get Read / Build Trust / Drive Action) */
-  .pillar-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-    gap:14px;
-    margin-top:32px;
-  }
-  .pillar{
-    text-align:center;
-    padding:26px 16px;
-    border:1px solid var(--border);
-    border-radius:14px;
-    transition:border-color .3s ease, transform .3s ease, box-shadow .3s ease;
-  }
-  .pillar:hover{
-    border-color:var(--red);
-    transform:translateY(-5px);
-    box-shadow:0 14px 30px rgba(196,24,24,0.18);
-  }
-  .pillar .num{
-    font-family:var(--font-display);
-    color:var(--red);
-    font-size:0.95rem;
-    letter-spacing:2px;
-    margin-bottom:10px;
-  }
-  .pillar h3{font-family:var(--font-display); font-size:1.25rem; color:var(--white); margin-bottom:8px;}
-  .pillar p{color:var(--gray); font-size:0.92rem;}
-
-  .process-flow{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    align-items:center;
-    gap:10px;
-    margin-top:34px;
-  }
-  .process-step{
-    border:1px solid var(--red);
-    padding:10px 20px;
-    border-radius:24px;
-    font-weight:600;
-    font-size:0.95rem;
-    color:var(--white);
-    background:rgba(196,24,24,0.05);
-  }
-  .process-arrow{color:var(--red); font-size:1.2rem;}
-
-  /* Experience */
-  .current-card{
-    border:1px solid var(--red);
-    border-radius:14px;
-    padding:32px;
-    background:linear-gradient(160deg, rgba(196,24,24,0.08), rgba(196,24,24,0.01));
-    position:relative;
-  }
-  .status-pill{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    border:1px solid var(--red);
-    color:var(--red-bright);
-    font-size:0.8rem;
-    font-weight:700;
-    letter-spacing:0.5px;
-    padding:6px 14px;
-    border-radius:20px;
-    margin-bottom:20px;
-  }
-  .status-dot{width:7px; height:7px; border-radius:50%; background:var(--red-bright); animation:pulse 1.8s ease-in-out infinite;}
-  @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:0.3;}}
-
-  .current-card h3{font-family:var(--font-display); font-size:1.7rem; color:var(--white);}
-  .current-card .role-org{color:var(--red-bright); font-weight:600; margin-top:6px;}
-  .current-card p{color:var(--gray); margin-top:16px; line-height:1.75; max-width:820px;}
-
-  .resp-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(min(260px, 100%), 1fr));
-    gap:8px 24px;
-    margin-top:20px;
-  }
-  .resp-grid li{
-    list-style:none;
-    color:var(--gray);
-    font-size:0.92rem;
-    padding-left:20px;
-    position:relative;
-    line-height:1.6;
-  }
-  .resp-grid li::before{
-    content:'✓';
-    color:var(--red-bright);
-    position:absolute;
-    left:0;
-    font-size:0.85rem;
-  }
-
-  .tag-row{margin-top:18px; display:flex; flex-wrap:wrap; gap:6px;}
-  .tag{
-    border:1px solid var(--red-dim);
-    color:var(--gray);
-    font-size:0.78rem;
-    font-weight:500;
-    padding:6px 14px;
-    border-radius:20px;
-    transition:border-color .25s ease, color .25s ease, transform .25s ease;
-  }
-  .tag:hover{
-    border-color:var(--red-bright);
-    color:var(--white);
-    transform:translateY(-2px);
-  }
-
-  /* Expertise blocks */
-  .expertise-block{
-    border-top:1px solid var(--border);
-    padding:30px 0;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:32px;
-  }
-  .expertise-block:first-of-type{border-top:none;}
-  .expertise-block .exp-num{
-    font-family:var(--font-display);
-    color:var(--red-dim);
-    font-size:0.85rem;
-    letter-spacing:2px;
-    margin-bottom:10px;
-  }
-  .expertise-block h3{
-    font-family:var(--font-display);
-    font-size:1.6rem;
-    color:var(--white);
-    margin-bottom:16px;
-    line-height:1.3;
-  }
-  .expertise-block p{color:var(--gray); line-height:1.75; margin-bottom:14px; font-size:0.96rem;}
-  .expertise-block .flow-line{
-    color:var(--red-bright);
-    font-weight:600;
-    font-size:0.9rem;
-    margin:18px 0;
-    letter-spacing:0.3px;
-  }
-  .mini-list{display:flex; flex-wrap:wrap; gap:8px; align-content:flex-start;}
-  .mini-list span{
-    border:1px solid var(--border);
-    color:var(--gray);
-    font-size:0.82rem;
-    padding:7px 13px;
-    border-radius:8px;
-  }
-  @media (max-width:800px){
-    .expertise-block{grid-template-columns:1fr;}
-  }
-
-  /* Work history timeline */
-  .timeline{
-    margin-top:32px;
-    display:flex;
-    flex-direction:column;
-    gap:0;
-  }
-  .timeline-item{
-    border-left:2px solid var(--border);
-    padding:0 0 28px 26px;
-    position:relative;
-    transition:border-color .3s ease;
-  }
-  .timeline-item:hover{border-color:rgba(196,24,24,0.45);}
-  .timeline-item:last-child{padding-bottom:0;}
-  .timeline-item::before{
-    content:'';
-    position:absolute;
-    left:-7px;
-    top:4px;
-    width:12px;
-    height:12px;
-    border-radius:50%;
-    background:var(--bg);
-    border:2px solid var(--red-bright);
-    transition:box-shadow .3s ease, transform .3s ease;
-  }
-  .timeline-item:hover::before{
-    box-shadow:0 0 0 5px rgba(196,24,24,0.18);
-    transform:scale(1.15);
-  }
-  .timeline-header{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:baseline;
-    gap:12px;
-    margin-bottom:4px;
-  }
-  .timeline-role{
-    font-family:var(--font-display);
-    font-size:1.25rem;
-    color:var(--white);
-    font-weight:700;
-  }
-  .timeline-dates{
-    color:var(--red-bright);
-    font-size:0.85rem;
-    font-weight:600;
-  }
-  .timeline-company{
-    color:var(--gray);
-    font-size:0.95rem;
-    margin-bottom:4px;
-  }
-  .timeline-location{
-    color:var(--gray-dim);
-    font-size:0.82rem;
-    margin-bottom:14px;
-  }
-  .timeline-item ul{list-style:none;}
-  .timeline-item li{
-    color:var(--gray);
-    font-size:0.92rem;
-    line-height:1.65;
-    padding-left:18px;
-    position:relative;
-    margin-bottom:6px;
-  }
-  .timeline-item li::before{
-    content:'—';
-    color:var(--red);
-    position:absolute;
-    left:0;
-  }
-
-  /* Case studies */
-  .cs-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(min(320px, 100%), 1fr));
-    gap:18px;
-  }
-  .cs-card{
-    border:1px solid var(--border);
-    border-radius:12px;
-    padding:26px;
-    transition:border-color .3s ease, transform .3s ease, box-shadow .3s ease;
-  }
-  .cs-card:hover{
-    border-color:var(--red);
-    transform:translateY(-6px);
-    box-shadow:0 16px 34px rgba(196,24,24,0.2);
-  }
-  .cs-card .cs-name{
-    font-family:var(--font-display);
-    font-size:1.5rem;
-    color:var(--red);
-    font-weight:800;
-    letter-spacing:0.5px;
-  }
-  .cs-card .cs-type{color:var(--gray-dim); font-size:0.85rem; margin:6px 0 18px;}
-  .cs-card p{color:var(--gray); font-size:0.93rem; line-height:1.65; margin-bottom:20px;}
-  .cs-stats{display:flex; flex-direction:column; gap:10px; border-top:1px solid var(--border); padding-top:20px;}
-  .cs-stat{display:flex; justify-content:space-between; align-items:baseline;}
-  .cs-stat .num{font-family:var(--font-display); font-weight:800; color:var(--white); font-size:1.15rem;}
-  .cs-stat .label{color:var(--gray-dim); font-size:0.82rem;}
-
-  /* Projects */
-  .proj-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-    gap:16px;
-  }
-  .proj-card{
-    border:1px solid var(--border);
-    border-radius:12px;
-    padding:22px;
-    transition:border-color .3s ease, transform .3s ease, box-shadow .3s ease;
-  }
-  .proj-card:hover{
-    border-color:var(--red);
-    transform:translateY(-5px);
-    box-shadow:0 14px 30px rgba(196,24,24,0.16);
-  }
-  .proj-card .proj-tag{color:var(--red-bright); font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:1px;}
-  .proj-card h3{font-family:var(--font-display); color:var(--white); font-size:1.2rem; margin:10px 0 12px;}
-  .proj-card p{color:var(--gray); font-size:0.9rem; line-height:1.6; margin-bottom:16px;}
-
-  .link-row{
-    margin-top:18px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-  }
-  .link-row a{
-    border:1px solid var(--border);
-    color:var(--gray);
-    font-size:0.78rem;
-    font-weight:500;
-    padding:6px 12px;
-    border-radius:8px;
-    transition:border-color .25s ease, color .25s ease, transform .25s ease, background .25s ease;
-    display:inline-block;
-  }
-  .link-row a:hover{
-    border-color:var(--red);
-    color:var(--white);
-    background:rgba(196,24,24,0.1);
-    transform:translateY(-2px);
-  }
-
-  /* Services */
-  .svc-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-    gap:14px;
-  }
-  .svc-card{
-    border:1px solid var(--border);
-    border-radius:12px;
-    padding:22px 20px;
-    transition:border-color .3s ease, transform .3s ease, box-shadow .3s ease;
-  }
-  .svc-card:hover{
-    border-color:var(--red);
-    transform:translateY(-5px);
-    box-shadow:0 14px 30px rgba(196,24,24,0.16);
-  }
-  .svc-card h3{
-    font-family:var(--font-display);
-    color:var(--red);
-    font-size:1.15rem;
-    margin-bottom:16px;
-    padding-bottom:14px;
-    border-bottom:1px solid var(--border);
-  }
-  .svc-card ul{list-style:none;}
-  .svc-card li{
-    color:var(--gray);
-    font-size:0.9rem;
-    padding:6px 0;
-  }
-
-  /* Skills / Tools */
-  .skill-cat{margin-bottom:22px;}
-  .skill-cat h4{
-    font-family:var(--font-display);
-    color:var(--white);
-    font-size:1.05rem;
-    margin-bottom:14px;
-  }
-  .skill-cat .mini-list span{border-color:var(--red-dim);}
-
-  /* Skill tabs */
-  .skill-tabs{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:44px;
-  }
-  .skill-tab{
-    border:1px solid var(--border);
-    background:transparent;
-    color:var(--gray);
-    font-family:var(--font-body);
-    font-weight:600;
-    font-size:0.92rem;
-    padding:10px 20px;
-    border-radius:30px;
-    cursor:pointer;
-    transition:transform .18s ease, border-color .2s ease, color .2s ease, background .2s ease;
-  }
-  .skill-tab:hover{
-    transform:translateY(-4px);
-    border-color:var(--red);
-    color:var(--white);
-  }
-  .skill-tab.active{
-    border-color:var(--red);
-    background:var(--red);
-    color:var(--white);
-    transform:translateY(-2px);
-  }
-  .skill-panel{display:none; margin-top:34px;}
-  .skill-panel.active{display:block; animation:fadeUp .35s ease;}
-  @keyframes fadeUp{
-    from{opacity:0; transform:translateY(10px);}
-    to{opacity:1; transform:translateY(0);}
-  }
-  .skill-panel .mini-list span{
-    transition:transform .18s ease, border-color .2s ease, color .2s ease;
-  }
-  .skill-panel .mini-list span:hover{
-    transform:translateY(-4px);
-    border-color:var(--red);
-    color:var(--white);
-  }
-
-  .tool-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-    gap:14px;
-  }
-  .tool-cat{
-    border:1px solid var(--border);
-    border-radius:12px;
-    padding:18px;
-    transition:border-color .3s ease, transform .3s ease;
-  }
-  .tool-cat:hover{
-    border-color:var(--red);
-    transform:translateY(-4px);
-  }
-  .tool-cat h4{color:var(--red-bright); font-size:0.85rem; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px;}
-  .tool-cat p{color:var(--white); font-size:0.95rem; line-height:1.6;}
-
-  /* Why hire me */
-  .why-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(min(230px, 100%), 1fr));
-    gap:14px;
-  }
-  .why-item{padding:4px 0;}
-  .why-item h3{
-    font-family:var(--font-display);
-    color:var(--white);
-    font-size:1.1rem;
-    margin-bottom:8px;
-  }
-  .why-item h3::before{content:'/ '; color:var(--red);}
-  .why-item p{color:var(--gray); font-size:0.88rem; line-height:1.6;}
-
-  /* Why content works - Q&A */
-  .qa-flow{
-    margin-top:26px;
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-  }
-  .qa-line{
-    display:flex;
-    gap:16px;
-    align-items:baseline;
-    font-size:1.15rem;
-  }
-  .qa-line .qtag{color:var(--red-bright); font-family:var(--font-display); font-weight:700; font-size:0.85rem; flex-shrink:0; width:70px;}
-  .qa-line .qtext{color:var(--white); font-style:italic;}
-  .qa-line.final .qtext{color:var(--gray); font-style:normal;}
-
-  /* Final CTA + Contact */
-  .cta-section{
-    text-align:center;
-    padding:90px 32px;
-    position:relative;
-  }
-  .cta-section h2{
-    font-family:var(--font-display);
-    font-weight:900;
-    font-size:clamp(2rem,4.5vw,3.2rem);
-    color:var(--white);
-  }
-  .cta-section .want-list{
-    margin:20px 0;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:10px;
-  }
-  .want-list span{
-    color:var(--red);
-    font-family:var(--font-display);
-    font-weight:700;
-    font-size:1.1rem;
-  }
-  .want-list span:not(:last-child)::after{content:'•'; color:var(--gray-dim); margin-left:12px;}
-
-  .contact-grid{
-    margin-top:40px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-    gap:14px;
-    max-width:820px;
-    margin-left:auto;
-    margin-right:auto;
-    text-align:left;
-  }
-  .contact-card{
-    border:1px solid var(--border);
-    border-radius:12px;
-    padding:20px;
-    transition:border-color .3s ease, transform .3s ease, box-shadow .3s ease;
-  }
-  .contact-card:hover{
-    border-color:var(--red);
-    transform:translateY(-4px);
-    box-shadow:0 12px 26px rgba(196,24,24,0.18);
-  }
-  .contact-card .c-icon{font-size:1.6rem; margin-bottom:10px;}
-  .contact-card .c-label{color:var(--gray-dim); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;}
-  .contact-card .c-value{color:var(--white); font-weight:600; margin-top:6px; font-size:0.98rem; word-break:break-word;}
-
-  footer{
-    border-top:1px solid var(--border);
-    padding:30px 32px;
-    text-align:center;
-  }
-  footer .f-name{font-family:var(--font-display); color:var(--red); font-size:1.3rem; font-weight:800;}
-  footer .f-roles{color:var(--gray-dim); font-size:0.85rem; margin:10px 0; max-width:700px; margin-left:auto; margin-right:auto;}
-  footer .f-copy{color:var(--gray-dim); font-size:0.8rem; margin-top:14px;}
-
-  @media (max-width:700px){
-    section.block{padding:56px 18px;}
-    .cta-section{padding:70px 18px;}
-    .inner{padding:0;}
-
-    .hero-ctas{flex-direction:column; align-items:stretch; gap:12px;}
-    .btn{width:100%; text-align:center; padding:15px 20px;}
-
-    .hero .titles .sep{margin:0 8px; display:inline-block;}
-    .hero .tagline{font-size:0.95rem;}
-    .hero .stack-line{font-size:0.82rem;}
-
-    .tool-row{gap:10px; margin:38px 0 34px;}
-    .tool-box{padding:9px 14px; gap:8px;}
-
-    .proj-grid, .svc-grid, .why-grid, .tool-grid{
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
-    .contact-grid{
-      grid-template-columns:repeat(3, 1fr);
-      gap:8px;
-    }
-    .contact-card{padding:14px 8px; text-align:center;}
-    .contact-card .c-icon{font-size:1.2rem; margin-bottom:6px;}
-    .contact-card .c-label{font-size:0.62rem;}
-    .contact-card .c-value{font-size:0.68rem; margin-top:4px; word-break:break-all;}
-    .proj-card, .svc-card, .why-item, .tool-cat{padding:16px 12px;}
-    .proj-card h3, .svc-card h3{font-size:0.95rem;}
-    .proj-card p, .svc-card li, .why-item p, .tool-cat p{font-size:0.8rem;}
-    .why-item h3{font-size:0.95rem;}
-    .link-row a{font-size:0.7rem; padding:5px 9px;}
-
-    .card-grid{
-      grid-template-columns:repeat(3, 1fr);
-      gap:8px;
-    }
-    .bring-grid .card{padding:14px 8px; text-align:center;}
-    .bring-grid .icon-badge{width:32px; height:32px; font-size:0.85rem; margin:0 auto 8px;}
-    .bring-grid .card h3{font-size:0.78rem; margin-bottom:4px; line-height:1.2;}
-    .bring-grid .card p{display:block; font-size:0.68rem; line-height:1.4;}
-
-    .two-col-cards{grid-template-columns:1fr 1fr; gap:10px;}
-    .two-col-cards .card{padding:16px 14px; text-align:left;}
-    .two-col-cards .card h3{font-size:0.9rem;}
-    .two-col-cards .card p{display:block; font-size:0.78rem;}
-
-    .pillar-grid{
-      grid-template-columns:repeat(4, 1fr);
-      gap:8px;
-    }
-    .pillar{padding:16px 6px;}
-    .pillar .num{font-size:0.7rem; margin-bottom:6px;}
-    .pillar h3{font-size:0.8rem; margin-bottom:0;}
-    .pillar p{display:none;}
-
-    .cs-grid{
-      grid-template-columns:repeat(3, 1fr);
-      gap:8px;
-    }
-
-    .current-card{padding:26px 20px;}
-    .current-card h3{font-size:1.35rem;}
-
-    .expertise-block{gap:28px; padding:32px 0;}
-    .expertise-block h3{font-size:1.3rem;}
-
-    .timeline-item{padding-left:22px;}
-    .timeline-role{font-size:1.05rem;}
-
-    .cs-card, .proj-card, .svc-card{padding:24px 20px;}
-    .cs-card{padding:14px 10px;}
-    .cs-card .cs-name{font-size:0.95rem; line-height:1.2;}
-    .cs-card .cs-type{font-size:0.65rem; margin:4px 0 10px;}
-    .cs-card p{display:none;}
-    .cs-card .tag-row{display:none;}
-    .cs-stats{gap:8px; padding-top:12px;}
-    .cs-stat{flex-direction:column; gap:0;}
-    .cs-stat .num{font-size:0.85rem;}
-    .cs-stat .label{font-size:0.6rem; line-height:1.3;}
-
-    .qa-line{flex-direction:column; gap:4px;}
-    .qa-line .qtag{width:auto;}
-
-    .want-list{gap:8px;}
-    .want-list span{font-size:0.95rem;}
-
-    .skill-tabs{gap:8px;}
-    .skill-tab{padding:9px 16px; font-size:0.85rem;}
-
-    .contact-grid{max-width:100%;}
-  }
-
-  @media (max-width:420px){
-    .logo{font-size:1.3rem;}
-    .hero h1{font-size:2.1rem;}
-    .hero .titles{font-size:0.92rem;}
-    .hero .titles .sep{margin:0 4px;}
-    .sec-title{font-size:1.6rem;}
-    .cta-section h2{font-size:1.7rem;}
-
-    .card-grid, .cs-grid, .pillar-grid, .contact-grid{gap:6px;}
-    .bring-grid .card, .cs-card{padding:10px 6px;}
-    .pillar{padding:12px 4px;}
-    .contact-card{padding:10px 6px;}
-    .contact-card .c-value{font-size:0.62rem;}
-
-    .two-col-cards{grid-template-columns:1fr; gap:10px;}
-
-    .timeline-role{font-size:0.98rem;}
-    .timeline-dates{font-size:0.78rem;}
-
-    .want-list span{font-size:0.85rem;}
-    .want-list span:not(:last-child)::after{margin-left:8px;}
-  }
-
-  /* Disable lingering hover states on touch devices */
-  @media (hover:none) and (pointer:coarse){
-    .card:hover, .cs-card:hover, .proj-card:hover, .svc-card:hover,
-    .tool-cat:hover, .contact-card:hover, .pillar:hover, .tag:hover,
-    .timeline-item:hover, .timeline-item:hover::before,
-    .btn-primary:hover, .btn-outline:hover,
-    .nav-links a:hover::after, .link-row a:hover,
-    .skill-tab:hover, .skill-panel .mini-list span:hover{
-      transform:none;
-      box-shadow:none;
-    }
-    .btn:hover::before{transform:translateX(-120%);}
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Areeba Arif | SEO Copywriter | E-commerce Manager | Project Lead</title>
+  <meta name="description" content="Hire Areeba Arif for SEO copywriting, project management, or Shopify e-commerce support, or combine what you need. Remote worldwide.">
+  <meta property="og:title" content="Areeba Arif | Copywriter, PM &amp; E-commerce Specialist">
+  <meta property="og:description" content="Flexible support for your brand: hire me for copywriting, project management, e-commerce &amp; Shopify, or mix the services you need.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://areebaarif999.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --bg: #080202;
+  --bg-soft: #110404;
+  --bg-card: #140505;
+  --red: #c41818;
+  --red-bright: #e13030;
+  --red-dim: #5c1010;
+  --white: #f5f2ee;
+  --gray: #b9b2ac;
+  --gray-dim: #8a827c;
+  --border: rgba(196, 24, 24, 0.18);
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  --radius: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: -10%;
+  right: -10%;
+  width: 620px;
+  height: 620px;
+  background: radial-gradient(circle, rgba(196, 24, 24, 0.16) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8, 2, 2, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.55rem;
+  color: var(--red);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--gray);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--white);
+}
+
+.nav-cta {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--red);
+  color: var(--white) !important;
+  font-weight: 600;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  z-index: 1;
+  padding: 88px 0 72px;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--gray);
+  margin-bottom: 28px;
+}
+
+.hero-badge .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.hero h1 .accent {
+  color: var(--red);
+}
+
+.hero-subtitle {
+  margin-top: 22px;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.hero-desc {
+  max-width: 760px;
+  margin: 18px auto 0;
+  color: var(--gray);
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--red);
+  color: var(--white);
+  box-shadow: 0 10px 30px rgba(196, 24, 24, 0.35);
+}
+
+.btn-primary:hover {
+  background: var(--red-bright);
+}
+
+.btn-outline {
+  border: 1px solid var(--border);
+  color: var(--white);
+}
+
+.btn-outline:hover {
+  border-color: var(--red);
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.hero-tags span {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 0.82rem;
+  color: var(--gray);
+}
+
+/* Stats strip */
+.stats-strip {
+  position: relative;
+  z-index: 1;
+  padding: 28px 0 64px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  text-align: center;
+}
+
+.stat-card .num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--red-bright);
+}
+
+.stat-card .label {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.82rem;
+  color: var(--gray-dim);
+}
+
+/* Sections */
+section {
+  position: relative;
+  z-index: 1;
+  padding: 78px 0;
+}
+
+section.alt {
+  background: var(--bg-soft);
+}
+
+.eyebrow {
+  color: var(--red-bright);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.section-lead {
+  max-width: 720px;
+  color: var(--gray);
+  font-size: 1.02rem;
+}
+
+.section-lead.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-head {
+  margin-bottom: 44px;
+}
+
+.section-head.center {
+  text-align: center;
+}
+
+.section-head.center .section-lead {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Value cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.value-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(196, 24, 24, 0.45);
+}
+
+.value-card .icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(196, 24, 24, 0.12);
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.value-card h3 {
+  font-size: 1.08rem;
+  margin-bottom: 10px;
+}
+
+.value-card p {
+  color: var(--gray);
+  font-size: 0.92rem;
+}
+
+.value-card ul {
+  margin-top: 14px;
+  padding-left: 18px;
+  color: var(--gray-dim);
+  font-size: 0.86rem;
+}
+
+.value-card li + li {
+  margin-top: 6px;
+}
+
+/* Compare box */
+.compare-box {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.compare-card {
+  border-radius: var(--radius);
+  padding: 26px;
+  border: 1px solid var(--border);
+}
+
+.compare-card.bad {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.compare-card.good {
+  background: rgba(196, 24, 24, 0.08);
+  border-color: rgba(196, 24, 24, 0.35);
+}
+
+.compare-card h4 {
+  margin-bottom: 14px;
+  font-size: 1rem;
+}
+
+.compare-card ul {
+  list-style: none;
+  color: var(--gray);
+  font-size: 0.92rem;
+}
+
+.compare-card li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.compare-card li:last-child {
+  border-bottom: none;
+}
+
+/* Hire options */
+.hire-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.hire-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hire-card.featured {
+  border-color: rgba(196, 24, 24, 0.45);
+  background: linear-gradient(180deg, rgba(196, 24, 24, 0.1), rgba(196, 24, 24, 0.02));
+}
+
+.hire-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--red-bright);
+  margin-bottom: 10px;
+}
+
+.hire-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.hire-card > p {
+  color: var(--gray);
+  font-size: 0.92rem;
+  margin-bottom: 16px;
+}
+
+.hire-card ul {
+  list-style: none;
+  flex: 1;
+}
+
+.hire-card li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--gray);
+  font-size: 0.88rem;
+  margin-bottom: 8px;
+}
+
+.hire-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--red-bright);
+}
+
+.hire-fit {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82rem;
+  color: var(--gray-dim);
+  font-style: italic;
+}
+
+.hire-combo {
+  margin-top: 28px;
+  text-align: center;
+  padding: 26px 24px;
+  border-radius: var(--radius);
+  border: 1px dashed rgba(196, 24, 24, 0.35);
+  background: rgba(196, 24, 24, 0.05);
+}
+
+.hire-combo h4 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.hire-combo p {
+  color: var(--gray);
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+}
+
+/* Current role */
+.featured-role {
+  background: linear-gradient(135deg, rgba(196, 24, 24, 0.12), rgba(196, 24, 24, 0.03));
+  border: 1px solid rgba(196, 24, 24, 0.3);
+  border-radius: calc(var(--radius) + 4px);
+  padding: 34px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.12);
+  color: #86efac;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.status-pill .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.featured-role h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.featured-role .role-link {
+  color: var(--red-bright);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.featured-role p {
+  color: var(--gray);
+  margin-top: 14px;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.tag {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--gray);
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 24px;
+}
+
+.check-list {
+  list-style: none;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--gray);
+  font-size: 0.92rem;
+  margin-bottom: 10px;
+}
+
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--red-bright);
+  font-weight: 700;
+}
+
+/* Case studies */
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.cs-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+}
+
+.cs-type {
+  color: var(--red-bright);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin: 6px 0 12px;
+}
+
+.cs-card p {
+  color: var(--gray);
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.cs-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.cs-stat {
+  text-align: center;
+  padding: 12px 8px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.cs-stat .num {
+  display: block;
+  font-weight: 800;
+  color: var(--white);
+  font-size: 1.1rem;
+}
+
+.cs-stat .label {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--gray-dim);
+  margin-top: 4px;
+}
+
+.cs-link {
+  margin-top: auto;
+  color: var(--red-bright);
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+/* Projects */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.proj-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.proj-tag {
+  color: var(--red-bright);
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.proj-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.proj-card p {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.link-row a {
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--gray);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.link-row a:hover {
+  border-color: var(--red);
+  color: var(--white);
+}
+
+/* Timeline */
+.timeline {
+  display: grid;
+  gap: 18px;
+}
+
+.timeline-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.timeline-role {
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+
+.timeline-dates {
+  color: var(--gray-dim);
+  font-size: 0.85rem;
+}
+
+.timeline-company {
+  color: var(--red-bright);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.timeline-location {
+  color: var(--gray-dim);
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.timeline-item ul {
+  padding-left: 18px;
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.timeline-item li + li {
+  margin-top: 8px;
+}
+
+/* Skills */
+.skill-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.skill-tab {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--gray);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.skill-tab.active {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--white);
+}
+
+.skill-panel {
+  display: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.skill-panel.active {
+  display: block;
+}
+
+.mini-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mini-list span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.82rem;
+  color: var(--gray);
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.tool-cat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+.tool-cat h4 {
+  font-size: 0.82rem;
+  color: var(--red-bright);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tool-cat p {
+  color: var(--gray);
+  font-size: 0.88rem;
+}
+
+/* Process */
+.process-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.process-step {
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.process-arrow {
+  color: var(--red-bright);
+}
+
+/* Contact */
+.contact-section {
+  text-align: center;
+  padding: 90px 0 70px;
+}
+
+.contact-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 14px;
+}
+
+.contact-section p {
+  color: var(--gray);
+  max-width: 620px;
+  margin: 0 auto 30px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 16px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.contact-card:hover {
+  border-color: var(--red);
+  transform: translateY(-3px);
+}
+
+.contact-card .c-icon {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.contact-card .c-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gray-dim);
+}
+
+.contact-card .c-value {
+  margin-top: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 0 34px;
+  text-align: center;
+  color: var(--gray-dim);
+  font-size: 0.85rem;
+}
+
+/* Case study pages */
+.case-hero {
+  padding: 72px 0 48px;
+}
+
+.case-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 10px;
+}
+
+.case-meta {
+  color: var(--gray);
+  margin-bottom: 24px;
+}
+
+.case-content {
+  max-width: 780px;
+}
+
+.case-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin: 34px 0 12px;
+}
+
+.case-content p,
+.case-content li {
+  color: var(--gray);
+  margin-bottom: 12px;
+}
+
+.case-content ul {
+  padding-left: 20px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--red-bright);
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 28px 0;
+}
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile jump button: home and contact */
+.mobile-jump-btn {
+  display: none;
+  position: fixed;
+  bottom: 22px;
+  right: 18px;
+  z-index: 120;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--white);
+  box-shadow: 0 10px 28px rgba(196, 24, 24, 0.45);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mobile-jump-btn:hover {
+  background: var(--red-bright);
+  transform: scale(1.06);
+}
+
+.mobile-jump-btn:active {
+  transform: scale(0.96);
+}
+
+.mobile-jump-btn .jump-arrow {
+  transition: transform 0.3s ease;
+}
+
+.mobile-jump-btn.to-home .jump-arrow {
+  transform: rotate(0deg);
+}
+
+.mobile-jump-btn.to-contact .jump-arrow {
+  transform: rotate(180deg);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .stats-grid,
+  .card-grid,
+  .cs-grid,
+  .tool-grid,
+  .hire-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .compare-box,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: min(280px, 85vw);
+    background: var(--bg);
+    flex-direction: column;
+    padding: 90px 24px 24px;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    border-left: 1px solid var(--border);
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .mobile-jump-btn {
+    display: flex;
+  }
+
+  .stats-grid,
+  .card-grid,
+  .cs-grid,
+  .proj-grid,
+  .contact-grid,
+  .tool-grid,
+  .result-grid,
+  .hire-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 62px 0;
+  }
+}
+
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Areeba Arif",
+    "jobTitle": "SEO Copywriter, E-commerce Manager & Project Lead",
+    "url": "https://areebaarif999.github.io/",
+    "email": "areebaarif999@gmail.com",
+    "sameAs": ["https://www.linkedin.com/in/areebaarif/"],
+    "knowsAbout": ["E-commerce Management", "Shopify", "Project Management", "SEO Copywriting", "Email Marketing", "Canva", "Figma", "Klaviyo"]
+  }
+  </script>
 </head>
 <body>
 
 <header>
-  <nav>
-    <div class="logo">Areeba Arif</div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+  <div class="container">
+    <nav>
+      <a href="#home" class="logo">Areeba Arif</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#hire-options">Hire For</a></li>
+        <li><a href="#what-i-do">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
-<section class="hero" id="home">
-  <div class="glow-corner"></div>
-
-  <h1>
-    <span class="line-white">I Help Brands</span><br>
-    <span class="line-red">Get Found, Get Read &amp; Get Chosen.</span>
-  </h1>
-
-  <div class="titles">
-    SEO Copywriter <span class="sep">|</span> E-commerce Content Specialist <span class="sep">|</span> Shopify E-commerce Coordinator
-  </div>
-
-  <div class="hero-divider"></div>
-
-  <p class="tagline">
-    I create strategic, SEO-focused and conversion-driven content that helps brands improve visibility, communicate value, engage customers, and drive action.
-  </p>
-  <p class="stack-line">SEO Content &nbsp;•&nbsp; Web Copy &nbsp;•&nbsp; Shopify &nbsp;•&nbsp; Email Strategy &nbsp;•&nbsp; Amazon Content</p>
-
-  <div class="tool-row">
-    <div class="tool-box">
-      <svg viewBox="0 0 24 24" width="26" height="26"><path fill="#95BF47" d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023z"/><path fill="#95BF47" d="M11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"/></svg>
-      <span>Shopify</span>
+<main>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container reveal">
+      <div class="hero-badge"><span class="dot"></span> Available for copywriting, project management &amp; e-commerce projects</div>
+      <h1>I Help Brands Get Found, Get Read <span class="accent">&amp; Get Chosen.</span></h1>
+      <p class="hero-subtitle">SEO Copywriter · E-commerce Manager · Project Lead · Shopify Coordinator</p>
+      <p class="hero-desc">Need a copywriter? A project manager? Someone to handle Shopify content and e-commerce coordination? I work flexibly. Hire me for one role or combine the services your brand actually needs.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Let's Work Together</a>
+      </div>
+      <div class="hero-tags">
+        <span>Project Management</span>
+        <span>Shopify E-commerce</span>
+        <span>Canva &amp; Figma</span>
+        <span>SEO Copywriting</span>
+        <span>Klaviyo Email</span>
+        <span>Amazon Content</span>
+        <span>Client Success</span>
+      </div>
     </div>
-    <div class="tool-box">
-      <svg viewBox="0 0 100 30" width="88" height="24">
-        <text x="0" y="23" font-family="Georgia, 'Times New Roman', serif" font-weight="500" font-size="24" fill="#fff">klaviyo</text>
-        <path d="M91 3 L99 3 L99 12 L95 9 L91 12 Z" fill="#fff"/>
-      </svg>
-    </div>
-    <div class="tool-box">
-      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51z" fill="#F24E1E"/><path d="M12.735 7.51H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.587v7.51zm-4.587-6.039c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148z" fill="#A259FF"/><path d="M8.148 16.49c-1.665 0-3.019 1.355-3.019 3.019S6.483 22.529 8.148 22.529s3.024-1.365 3.024-3.02V16.49H8.148zm0-1.472h4.587v4.491c0 2.503-2.047 4.539-4.563 4.539-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49z" fill="#0ACF83"/><path d="M8.148 5.962c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V5.962H8.148z" fill="#FF7262"/><path d="M15.754 5.962h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49zm.097 1.472c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z" fill="#1ABCFE"/></svg>
-      <span>Figma</span>
-    </div>
-    <div class="tool-box seo">
-      <svg viewBox="0 0 24 24" fill="none" width="24" height="24"><circle cx="10.5" cy="10.5" r="6.3" stroke="#2fbf5f" stroke-width="1.7"/><path d="M15.2 15.2L20.5 20.5" stroke="#2fbf5f" stroke-width="1.9" stroke-linecap="round"/><path d="M7 11.8l1.6 1 2-2.6 1.6 1.6 1.8-2.4" stroke="#2fbf5f" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-      <span>SEO</span>
-    </div>
-    <div class="tool-box">
-      <svg viewBox="0 0 24 24" fill="none" width="24" height="24"><circle cx="12" cy="12" r="9.3" stroke="#fff" stroke-width="1.3"/><path d="M7.5 16.5L15 9l1.3 1.3-7.5 7.5-2.3.9.9-2.3z" fill="#fff"/><path d="M14.4 8.1l1.5-1.5 1.5 1.5-1.5 1.5z" fill="#fff"/></svg>
-      <span>Copywriter</span>
-    </div>
-    <div class="tool-box">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <g fill="#D97757">
-          <ellipse cx="12" cy="4" rx="1.1" ry="2.6"/>
-          <ellipse cx="12" cy="20" rx="1.1" ry="2.6"/>
-          <ellipse cx="4" cy="12" rx="2.6" ry="1.1"/>
-          <ellipse cx="20" cy="12" rx="2.6" ry="1.1"/>
-          <ellipse cx="6.8" cy="6.8" rx="1.1" ry="2.6" transform="rotate(-45 6.8 6.8)"/>
-          <ellipse cx="17.2" cy="17.2" rx="1.1" ry="2.6" transform="rotate(-45 17.2 17.2)"/>
-          <ellipse cx="17.2" cy="6.8" rx="1.1" ry="2.6" transform="rotate(45 17.2 6.8)"/>
-          <ellipse cx="6.8" cy="17.2" rx="1.1" ry="2.6" transform="rotate(45 6.8 17.2)"/>
-          <ellipse cx="8.8" cy="4.9" rx="1" ry="2.3" transform="rotate(-22.5 8.8 4.9)"/>
-          <ellipse cx="15.2" cy="19.1" rx="1" ry="2.3" transform="rotate(-22.5 15.2 19.1)"/>
-          <ellipse cx="19.1" cy="8.8" rx="1" ry="2.3" transform="rotate(67.5 19.1 8.8)"/>
-          <ellipse cx="4.9" cy="15.2" rx="1" ry="2.3" transform="rotate(67.5 4.9 15.2)"/>
-        </g>
-      </svg>
-      <span>Claude</span>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-strip">
+    <div class="container reveal">
+      <div class="stats-grid">
+        <div class="stat-card"><span class="num">156%</span><span class="label">Revenue Growth (Owl &amp; Ox)</span></div>
+        <div class="stat-card"><span class="num">187%</span><span class="label">Follower Growth (Melting Forest)</span></div>
+        <div class="stat-card"><span class="num">+30%</span><span class="label">Shopify Conversion Wins</span></div>
+        <div class="stat-card"><span class="num">80%</span><span class="label">Sales Growth (Own E-commerce Brand)</span></div>
+      </div>
     </div>
   </div>
 
-  <div class="hero-ctas">
-    <a href="#projects" class="btn btn-primary">View My Work</a>
-    <a href="#contact" class="btn btn-outline">Let's Work Together</a>
-  </div>
-
-  <div class="scroll-cue">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="block" id="about">
-  <div class="inner">
-    <div class="eyebrow">About Me</div>
-    <h2 class="sec-title">Content, E-commerce &amp; Strategy <span class="accent">— All in One.</span></h2>
-    <p class="sec-lead">I'm an <strong>SEO Copywriter and E-commerce Content Specialist</strong> with experience across SEO content, website copy, blogs, web pages, Shopify e-commerce, Amazon content, email marketing, and conversion-focused copywriting.</p>
-    <p class="sec-lead">I don't believe good content is simply about putting words on a page.</p>
-
-    <ul class="insight-list">
-      <li>I research the audience.</li>
-      <li>I understand the search intent.</li>
-      <li>I study the product and market.</li>
-      <li>I identify what customers care about.</li>
-    </ul>
-
-    <p class="sec-lead">Then I turn those insights into content with a clear purpose. From SEO blogs and website pages to Shopify product content, Amazon listings, email campaigns, and strategic content planning, I create content designed to attract, educate, build trust, and encourage action.</p>
-
-    <h3 class="subhead">What I Bring</h3>
-    <div class="card-grid bring-grid">
-      <div class="card">
-        <div class="icon-badge">SEO</div>
-        <h3>SEO</h3>
-        <p>Content built around keywords, search intent, relevance, and audience needs.</p>
+  <!-- HIRE OPTIONS -->
+  <section id="hire-options">
+    <div class="container reveal">
+      <div class="section-head center">
+        <div class="eyebrow">How You Can Hire Me</div>
+        <h2 class="section-title">Pick What Your Brand Needs. Or Combine Them.</h2>
+        <p class="section-lead center">Some clients hire me only for copy. Others need a project manager or e-commerce support. Many want a mix. All options work.</p>
       </div>
-      <div class="card">
-        <div class="icon-badge">✎</div>
-        <h3>Copywriting</h3>
-        <p>Clear and persuasive messaging for websites, products, emails, landing pages, and campaigns.</p>
+
+      <div class="hire-grid">
+        <article class="hire-card">
+          <div class="hire-label">Option 1</div>
+          <h3>SEO Copywriter &amp; Content Specialist</h3>
+          <p>Hire me when you need strong written content without the full e-commerce package.</p>
+          <ul>
+            <li>SEO blogs &amp; website copy</li>
+            <li>Product &amp; landing page content</li>
+            <li>Amazon listing copy</li>
+            <li>Email copy &amp; subject lines</li>
+            <li>Brand messaging &amp; CTAs</li>
+          </ul>
+          <div class="hire-fit">Best for: brands, agencies &amp; stores that need content only</div>
+        </article>
+
+        <article class="hire-card featured">
+          <div class="hire-label">Option 2</div>
+          <h3>Project Manager &amp; Client Success</h3>
+          <p>Hire me when you need someone to lead the work: timelines, teams, and delivery.</p>
+          <ul>
+            <li>Project planning &amp; execution</li>
+            <li>Client communication &amp; updates</li>
+            <li>Designer / dev / writer coordination</li>
+            <li>A/B testing &amp; performance tracking</li>
+            <li>Strategy + follow-through</li>
+          </ul>
+          <div class="hire-fit">Best for: agencies &amp; brands that need a reliable PM lead</div>
+        </article>
+
+        <article class="hire-card">
+          <div class="hire-label">Option 3</div>
+          <h3>E-commerce &amp; Shopify Manager</h3>
+          <p>Hire me when you need hands-on store support: content, coordination, and growth.</p>
+          <ul>
+            <li>Shopify content &amp; store coordination</li>
+            <li>Product &amp; collection pages</li>
+            <li>Canva &amp; Figma visuals</li>
+            <li>Klaviyo email planning</li>
+            <li>E-commerce strategy support</li>
+          </ul>
+          <div class="hire-fit">Best for: Shopify &amp; online stores needing ongoing support</div>
+        </article>
       </div>
-      <div class="card">
-        <div class="icon-badge">S</div>
-        <h3>Shopify E-commerce</h3>
-        <p>E-commerce content, product information, website content, store coordination, and customer-facing messaging within Shopify.</p>
-      </div>
-      <div class="card">
-        <div class="icon-badge">A</div>
-        <h3>Amazon Content</h3>
-        <p>Product listing copy, titles, bullet points, descriptions, SEO-focused Amazon content, and A+ content copy.</p>
-      </div>
-      <div class="card">
-        <div class="icon-badge">✉</div>
-        <h3>Email Strategy</h3>
-        <p>Campaign planning, email content calendars, promotional sequences, launch campaigns, reminders, and retention-focused content.</p>
-      </div>
-      <div class="card">
-        <div class="icon-badge">💬</div>
-        <h3>Client Communication</h3>
-        <p>Clear, consistent communication that keeps clients informed, aligned, and confident throughout every project.</p>
+
+      <div class="hire-combo">
+        <h4>Want more than one?</h4>
+        <p>Copy + Shopify. PM + email. Content + design. Tell me what combination fits your project. I'll scope it around your needs, not a fixed package.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- MY APPROACH -->
-<section class="block alt" id="approach">
-  <div class="inner">
-    <div class="eyebrow">My Approach</div>
-    <h2 class="sec-title">Strategy Before <span class="accent">Words.</span></h2>
-    <p class="sec-lead">Every piece of content should have a job. It should either:</p>
-
-    <div class="pillar-grid">
-      <div class="pillar">
-        <div class="num">01</div>
-        <h3>Get Found</h3>
-        <p>Improve visibility and reach the right audience.</p>
-      </div>
-      <div class="pillar">
-        <div class="num">02</div>
-        <h3>Get Read</h3>
-        <p>Capture attention and communicate value clearly.</p>
-      </div>
-      <div class="pillar">
-        <div class="num">03</div>
-        <h3>Build Trust</h3>
-        <p>Answer questions and remove customer hesitation.</p>
-      </div>
-      <div class="pillar">
-        <div class="num">04</div>
-        <h3>Drive Action</h3>
-        <p>Guide the customer toward the next step.</p>
-      </div>
-    </div>
-
-    <h3 class="subhead" style="text-align:center;">My Process</h3>
-    <div class="process-flow">
-      <div class="process-step">Research</div><span class="process-arrow">→</span>
-      <div class="process-step">Strategy</div><span class="process-arrow">→</span>
-      <div class="process-step">Create</div><span class="process-arrow">→</span>
-      <div class="process-step">Optimize</div><span class="process-arrow">→</span>
-      <div class="process-step">Convert</div>
-    </div>
-  </div>
-</section>
-
-<!-- CURRENT EXPERIENCE -->
-<section class="block" id="experience">
-  <div class="inner">
-    <div class="eyebrow">Current Experience</div>
-    <h2 class="sec-title">SEO Copywriter Expert / Shopify Ecommerce Coordinator</h2>
-
-    <div class="current-card" style="margin-top:40px;">
-      <div class="status-pill"><span class="status-dot"></span> Currently Working Here</div>
-      <h3>A-DIY <a href="https://a-diy.com/" target="_blank" rel="noopener" style="font-size:0.85rem; color:var(--red-bright); font-family:var(--font-body); font-weight:600; margin-left:10px;">↗ a-diy.com</a></h3>
-      <div class="role-org">Current Role</div>
-      <p>Currently working with A-DIY as an SEO Copywriter Expert / Shopify Ecommerce Coordinator. My primary focus is SEO copywriting, content writing, research, website content, e-commerce content, and Shopify-related coordination.</p>
-      <p>I do not work as a Shopify developer. My role focuses on the content and e-commerce coordination side of Shopify.</p>
-
-      <h3 style="font-size:1.1rem; margin-top:34px;">Key Responsibilities</h3>
-      <ul class="resp-grid">
-        <li>Research and write SEO-focused website content.</li>
-        <li>Create SEO blogs and long-form content.</li>
-        <li>Research keywords, topics, and search intent.</li>
-        <li>Develop website pages and customer-facing content.</li>
-        <li>Write product and e-commerce copy.</li>
-        <li>Create content around product features and customer benefits.</li>
-        <li>Research competitors and content opportunities.</li>
-        <li>Work with product information and website content within Shopify.</li>
-        <li>Support Shopify e-commerce coordination and content-related tasks.</li>
-        <li>Help maintain consistency across product and website messaging.</li>
-        <li>Create content aligned with brand voice and business objectives.</li>
-        <li>Balance SEO requirements with natural, engaging, customer-friendly writing.</li>
-      </ul>
-
-      <h3 style="font-size:1.1rem; margin-top:34px;">Current Focus</h3>
-      <div class="tag-row">
-        <span class="tag">SEO Copywriting</span>
-        <span class="tag">SEO Content</span>
-        <span class="tag">Web Content</span>
-        <span class="tag">Blogs</span>
-        <span class="tag">E-commerce Copy</span>
-        <span class="tag">Shopify E-commerce Coordination</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROFESSIONAL EXPERIENCE -->
-<section class="block alt">
-  <div class="inner">
-    <div class="eyebrow">Professional Experience</div>
-    <h2 class="sec-title">Where Strategy Meets Execution.</h2>
-    <p class="sec-lead">Building, scaling, and innovating across content strategy and e-commerce.</p>
-
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-header">
-          <span class="timeline-role">Project Manager &amp; Client Success Lead</span>
-          <span class="timeline-dates">Jul 2025 – Jul 20, 2026</span>
-        </div>
-        <div class="timeline-company">The Emissary Agency</div>
-        <div class="timeline-location">🌍 Remote – USA</div>
-        <ul>
-          <li>Work with e-commerce brands on strategy and execution — basically the bridge between the client's vision and what actually gets done.</li>
-          <li>Build content strategies that people actually want to read, not just stuff that ranks on Google.</li>
-          <li>Run A/B tests on Shopify stores — the kind of work where +30% conversions = real wins.</li>
-          <li>Send emails that people open (35% open rate is solid when most brands are at 15%).</li>
-          <li>Keep everyone on the same page — designers, devs, writers — because miscommunication kills projects.</li>
-        </ul>
+  <!-- WHAT I DO -->
+  <section id="what-i-do" class="alt">
+    <div class="container reveal">
+      <div class="section-head center">
+        <div class="eyebrow">Services Breakdown</div>
+        <h2 class="section-title">Everything I Can Help With</h2>
+        <p class="section-lead center">These are the skills behind each hire option. Use what you need, skip what you don't.</p>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-header">
-          <span class="timeline-role">Social Media &amp; Email Marketing Executive</span>
-          <span class="timeline-dates">Aug 2025 – Jun 2026</span>
-        </div>
-        <div class="timeline-company">ShipMagz</div>
-        <div class="timeline-location">🌍 Remote – Germany</div>
-        <ul>
-          <li>Managed social media for a global logistics company — which sounds boring but it's actually about making shipping interesting to people.</li>
-          <li>Built content calendars that actually made sense — not just random posts, but a real strategy.</li>
-          <li>Tracked what's working, what's not, and doubled down on winners using Google Analytics.</li>
-          <li>Designed and sent email campaigns that converted — using Brevo, testing subject lines, the whole thing.</li>
-          <li>Made videos with CapCut and HeyGen for social media — because static posts are boring in 2024.</li>
-        </ul>
-      </div>
+      <div class="card-grid">
+        <article class="value-card">
+          <div class="icon">📋</div>
+          <h3>Project Management &amp; Client Success</h3>
+          <p>I keep projects on track: timelines, deliverables, team alignment, and clear communication so nothing falls through the cracks.</p>
+          <ul>
+            <li>Project planning &amp; execution</li>
+            <li>Client communication &amp; updates</li>
+            <li>Cross-team coordination (design, dev, content)</li>
+            <li>A/B testing &amp; performance tracking</li>
+          </ul>
+        </article>
 
-      <div class="timeline-item">
-        <div class="timeline-header">
-          <span class="timeline-role">Owner &amp; E-Commerce Manager</span>
-          <span class="timeline-dates">Jan 2024 – Dec 2024</span>
-        </div>
-        <div class="timeline-company">Bell &amp; Buy (Founder)</div>
-        <div class="timeline-location">🌍 UAE Market</div>
-        <ul>
-          <li>Started my own e-commerce business — built it from zero to 80% sales growth in one year.</li>
-          <li>Handled everything: product sourcing, listing optimization, selling on Amazon and Shopify.</li>
-          <li>Ran Meta Ads and TikTok campaigns that actually made money — not just got views.</li>
-          <li>Learned the hard way what sells and what doesn't. Some lessons cost money, but they stick.</li>
-        </ul>
-      </div>
+        <article class="value-card">
+          <div class="icon">🛒</div>
+          <h3>Shopify E-commerce Management</h3>
+          <p>I manage the content and coordination side of Shopify stores: product pages, collections, messaging, and store updates that support sales.</p>
+          <ul>
+            <li>Product &amp; collection content</li>
+            <li>Store content coordination</li>
+            <li>Conversion-focused page updates</li>
+            <li>Brand consistency across the store</li>
+          </ul>
+        </article>
 
-      <div class="timeline-item">
-        <div class="timeline-header">
-          <span class="timeline-role">Video Content Creator &amp; Teaching Instructor</span>
-          <span class="timeline-dates">May 2025 – Oct 2025</span>
-        </div>
-        <div class="timeline-company">PACE Online School</div>
-        <div class="timeline-location">🌍 Pakistan &amp; Saudi Arabia</div>
-        <ul>
-          <li>Made videos and reels with CapCut to get students to sign up — worked better than traditional ads.</li>
-          <li>Taught kids from grade 1 to 10 — both online and in-person. Every grade has different needs.</li>
-          <li>Managed the whole student experience — tests, progress tracking, keeping parents updated.</li>
-        </ul>
-      </div>
+        <article class="value-card">
+          <div class="icon">🎨</div>
+          <h3>Canva &amp; Figma Design</h3>
+          <p>I create visual assets that support your brand: social graphics, email layouts, page structure, and design systems your team can reuse.</p>
+          <ul>
+            <li>Canva templates &amp; campaign visuals</li>
+            <li>Figma design systems &amp; page layouts</li>
+            <li>Email &amp; social creative direction</li>
+            <li>Brand-consistent visual content</li>
+          </ul>
+        </article>
 
-      <div class="timeline-item">
-        <div class="timeline-header">
-          <span class="timeline-role">Academic Research Writer</span>
-          <span class="timeline-dates">Mar 2021 – Dec 2023</span>
-        </div>
-        <div class="timeline-company">OHSPS Inc.</div>
-        <div class="timeline-location">🌍 Remote – Saudi Arabia</div>
-        <ul>
-          <li>Wrote academic research for specialized courses (NEBOSH, NVQ, IOSH) — technical stuff but had to make it clear.</li>
-          <li>Built content strategies for students around the world working on different qualifications.</li>
-          <li>Met tight deadlines, followed strict academic standards — no shortcuts allowed.</li>
-        </ul>
+        <article class="value-card">
+          <div class="icon">✍️</div>
+          <h3>SEO Copywriting &amp; Web Content</h3>
+          <p>Strategic copy that gets found, gets read, and drives action, built around search intent, customer needs, and conversion goals.</p>
+          <ul>
+            <li>SEO blogs &amp; website pages</li>
+            <li>Product &amp; landing page copy</li>
+            <li>Brand messaging &amp; CTAs</li>
+            <li>Keyword &amp; competitor research</li>
+          </ul>
+        </article>
+
+        <article class="value-card">
+          <div class="icon">✉️</div>
+          <h3>Email Marketing &amp; Klaviyo Strategy</h3>
+          <p>I don't just write one-off emails. I plan campaigns, flows, calendars, and sequences that nurture, convert, and retain customers.</p>
+          <ul>
+            <li>Klaviyo flows &amp; campaigns</li>
+            <li>Launch, promo &amp; retention emails</li>
+            <li>Content calendars &amp; subject line testing</li>
+            <li>Brevo &amp; email platform setup</li>
+          </ul>
+        </article>
+
+        <article class="value-card">
+          <div class="icon">📦</div>
+          <h3>Amazon &amp; E-commerce Content</h3>
+          <p>Listing copy and product content designed for how customers actually shop: scan, compare, trust, and buy.</p>
+          <ul>
+            <li>Amazon titles, bullets &amp; descriptions</li>
+            <li>A+ content copy</li>
+            <li>Multi-channel product messaging</li>
+            <li>Full buying journey content</li>
+          </ul>
+        </article>
       </div>
     </div>
+  </section>
 
-    <div class="expertise-block">
-      <div>
-        <div class="exp-num">01 — SEO Copywriting</div>
-        <h3>Content That Gets Found — And Actually Gets Read.</h3>
-        <p>I create SEO content that focuses on both search visibility and human readers.</p>
-        <p class="flow-line">Keyword → Search Intent → Content Strategy → Writing → Optimization</p>
-        <p>I don't believe in keyword stuffing. I focus on creating content that answers the user's actual question and provides genuine value while supporting organic visibility.</p>
+  <!-- CURRENT ROLE -->
+  <section id="experience">
+    <div class="container reveal">
+      <div class="section-head">
+        <div class="eyebrow">Current Role</div>
+        <h2 class="section-title">Where I'm Working Now</h2>
       </div>
-      <div>
-        <h3 style="font-size:1.1rem; color:var(--gray); margin-bottom:16px;">I Work On</h3>
-        <div class="mini-list">
-          <span>SEO blogs</span><span>Website content</span><span>SEO web pages</span><span>Landing pages</span><span>Product pages</span><span>Category/collection pages</span><span>Long-form content</span><span>Keyword-focused content</span><span>Search-intent-based content</span><span>On-page content</span><span>Content optimization</span><span>Competitor &amp; topic research</span>
+
+      <div class="featured-role">
+        <div class="status-pill"><span class="dot"></span> Currently Working Here</div>
+        <h3>A-DIY <a href="https://a-diy.com/" target="_blank" rel="noopener" class="role-link">↗ a-diy.com</a></h3>
+        <p><strong>SEO Copywriter Expert / Shopify E-commerce Coordinator</strong></p>
+        <p>I'm helping A-DIY, a professional-grade DIY deck kit brand, with SEO website content, product copy, blog strategy, competitor research, and Shopify e-commerce coordination. This is content + e-commerce management, not development.</p>
+
+        <div class="two-col">
+          <div>
+            <h4 style="margin-bottom:12px;">What I handle</h4>
+            <ul class="check-list">
+              <li>SEO-focused homepage, product &amp; collection copy</li>
+              <li>Blog &amp; long-form content research and writing</li>
+              <li>Keyword research &amp; search intent mapping</li>
+              <li>Shopify content updates &amp; store coordination</li>
+              <li>Brand voice consistency across the store</li>
+              <li>Competitor &amp; content gap analysis</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="margin-bottom:12px;">Focus areas</h4>
+            <div class="tag-row">
+              <span class="tag">SEO Copywriting</span>
+              <span class="tag">Shopify Coordination</span>
+              <span class="tag">E-commerce Content</span>
+              <span class="tag">Web Pages</span>
+              <span class="tag">Product Copy</span>
+              <span class="tag">Blog Strategy</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="expertise-block">
-      <div>
-        <div class="exp-num">02 — Web Content &amp; Copywriting</div>
-        <h3>Words That Make Brands Clearer.</h3>
-        <p>Your website has seconds to tell visitors who you are, what you offer, why it matters, why they should trust you, and what they should do next. That's where strategic web copy comes in.</p>
-        <p style="margin-top:20px; color:var(--white); font-weight:600;">My goal is simple: Make the message clear. Make the value obvious. Make the next step easy.</p>
+  <!-- CASE STUDIES -->
+  <section id="case-studies">
+    <div class="container reveal">
+      <div class="section-head center">
+        <div class="eyebrow">Case Studies</div>
+        <h2 class="section-title">Results That Speak for Themselves</h2>
+        <p class="section-lead center">Real projects with measurable outcomes. Website links and writing samples for each brand are in the Client Work section below.</p>
       </div>
-      <div>
-        <h4 style="color:var(--gray); font-size:0.95rem; margin-bottom:10px;">Web Content</h4>
-        <div class="mini-list" style="margin-bottom:24px;">
-          <span>Homepages</span><span>About pages</span><span>Service pages</span><span>Landing pages</span><span>Product pages</span><span>Category pages</span><span>Collection pages</span><span>Promotional pages</span><span>Website sections</span>
-        </div>
-        <h4 style="color:var(--gray); font-size:0.95rem; margin-bottom:10px;">Conversion Copywriting</h4>
-        <div class="mini-list">
-          <span>Headlines</span><span>Hooks</span><span>CTAs</span><span>Product benefits</span><span>Sales messaging</span><span>Promotional copy</span><span>Brand messaging</span><span>Customer-focused copy</span>
-        </div>
-      </div>
-    </div>
 
-    <div class="expertise-block">
-      <div>
-        <div class="exp-num">03 — Shopify E-commerce</div>
-        <h3>Shopify Content That Supports the Customer Journey.</h3>
-        <p>Shopify isn't only about the store itself. The content inside the store plays a major role in helping customers understand products, trust the brand, and make purchasing decisions.</p>
-        <p>I work on the content and coordination side of Shopify, not Shopify development.</p>
-        <div class="tag-row">
-          <span class="tag">Shopify</span><span class="tag">E-commerce Content</span><span class="tag">Product Copy</span><span class="tag">Product Pages</span><span class="tag">Collection Content</span><span class="tag">Store Content Coordination</span><span class="tag">Conversion Copywriting</span>
-        </div>
-      </div>
-      <div class="card-grid two-col-cards">
-        <div class="card" style="padding:20px;"><h3 style="font-size:1rem;">Product Content</h3><p>Descriptions, benefits, and customer-focused messaging.</p></div>
-        <div class="card" style="padding:20px;"><h3 style="font-size:1rem;">Website Content</h3><p>Homepage, collection, category, and promotional content.</p></div>
-        <div class="card" style="padding:20px;"><h3 style="font-size:1rem;">E-commerce Copywriting</h3><p>Copy designed around customer needs and conversion.</p></div>
-        <div class="card" style="padding:20px;"><h3 style="font-size:1rem;">Store Coordination</h3><p>Managing content-related updates within Shopify.</p></div>
-      </div>
-    </div>
+      <div class="cs-grid">
+        <article class="cs-card">
+          <h3>Melting Forest</h3>
+          <div class="cs-type">Content Strategy · Email Marketing · Klaviyo</div>
+          <p>Built the brand's content strategy from scratch: sustainability storytelling, email campaigns, and customer journey messaging that actually connected.</p>
+          <div class="cs-stats">
+            <div class="cs-stat"><span class="num">187%</span><span class="label">Follower Growth</span></div>
+            <div class="cs-stat"><span class="num">35%</span><span class="label">Email Open Rate</span></div>
+            <div class="cs-stat"><span class="num">$47K</span><span class="label">Email Revenue</span></div>
+          </div>
+        </article>
 
-    <div class="expertise-block">
-      <div>
-        <div class="exp-num">04 — Amazon Content Writing</div>
-        <h3>Product Content Designed for the Amazon Customer.</h3>
-        <p>Amazon customers don't read every word. They scan, compare, evaluate, and decide. That's why Amazon content needs to communicate the product's value quickly and clearly.</p>
-        <p class="flow-line">Research → Keywords → Customer Intent → Benefits → Copy → Optimize</p>
-        <p>The goal isn't to fill the listing with keywords. The goal is to make the customer understand: <em style="color:var(--white);">"This product is right for me."</em></p>
-      </div>
-      <div>
-        <div class="mini-list">
-          <span>Amazon Product Titles</span><span>Amazon Bullet Points</span><span>Amazon Product Descriptions</span><span>Amazon SEO Content</span><span>A+ Content Copy</span><span>Amazon Listing Copy</span>
-        </div>
+        <article class="cs-card">
+          <h3>CBD Living</h3>
+          <div class="cs-type">Product Copy · Figma Design · Email Content</div>
+          <p>Rewrote product pages and emails for a premium feel. Built a Figma design system the team could reuse. Conversions and customer trust both went up.</p>
+          <div class="cs-stats">
+            <div class="cs-stat"><span class="num">23%</span><span class="label">Conversion Lift</span></div>
+            <div class="cs-stat"><span class="num">42%</span><span class="label">Email Improvement</span></div>
+            <div class="cs-stat"><span class="num">$89K</span><span class="label">Revenue</span></div>
+          </div>
+        </article>
+
+        <article class="cs-card">
+          <h3>Owl &amp; Ox</h3>
+          <div class="cs-type">Brand Positioning · Web Content · Strategy</div>
+          <p>Repositioned the brand from commodity to luxury with new messaging, audience focus, and content that justified premium pricing.</p>
+          <div class="cs-stats">
+            <div class="cs-stat"><span class="num">156%</span><span class="label">Revenue Growth</span></div>
+            <div class="cs-stat"><span class="num">54%</span><span class="label">Price Increase</span></div>
+            <div class="cs-stat"><span class="num">3.2×</span><span class="label">Customer LTV</span></div>
+          </div>
+        </article>
       </div>
     </div>
+  </section>
 
-    <div class="expertise-block">
-      <div>
-        <div class="exp-num">05 — Email Content &amp; Strategy</div>
-        <h3>I Don't Just Write Emails. I Plan Them.</h3>
-        <p>A successful email campaign needs more than good copy. It needs the right message, the right sequence, the right timing, and the right reason to send it.</p>
-        <p class="flow-line">Launch → Reminder → Last Call</p>
-        <p class="flow-line" style="margin-top:0;">Awareness → Education → Consideration → Conversion → Retention</p>
-        <p style="margin-top:14px;">Tools: Klaviyo | Brevo | Email Marketing Platforms</p>
-      </div>
-      <div>
-        <h4 style="color:var(--gray); font-size:0.95rem; margin-bottom:10px;">Content Planning</h4>
-        <div class="mini-list" style="margin-bottom:24px;">
-          <span>Product launches</span><span>Promotions</span><span>Seasonal campaigns</span><span>Reminders</span><span>Last calls</span><span>Retention</span><span>Engagement</span>
-        </div>
-        <h4 style="color:var(--gray); font-size:0.95rem; margin-bottom:10px;">Email Copywriting</h4>
-        <div class="mini-list">
-          <span>Subject lines</span><span>Preview text</span><span>Body copy</span><span>Promotional emails</span><span>Launch emails</span><span>Newsletter content</span><span>CTAs</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="expertise-block">
-      <div>
-        <div class="exp-num">06 — E-commerce Content</div>
-        <h3>Content Across the Entire Buying Journey.</h3>
-        <p>From the first Google search to the final purchase decision, customers interact with content at every stage.</p>
-      </div>
-      <div class="card-grid two-col-cards">
-        <div class="card" style="padding:20px;"><h3 style="font-size:1rem;">Discovery</h3><p>SEO blogs, search-focused content, educational articles.</p></div>
-        <div class="card" style="padding:20px;"><h3 style="font-size:1rem;">Consideration</h3><p>Website pages, product content, comparisons.</p></div>
-        <div class="card" style="padding:20px;"><h3 style="font-size:1rem;">Conversion</h3><p>Product pages, landing pages, sales messaging.</p></div>
-        <div class="card" style="padding:20px;"><h3 style="font-size:1rem;">Retention</h3><p>Email campaigns, product education, engagement.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- CASE STUDIES -->
-<section class="block" id="case-studies">
-  <div class="inner">
-    <div class="eyebrow">Case Studies</div>
-    <h2 class="sec-title">Real Projects. Strategic Thinking. <span class="accent">Measurable Outcomes.</span></h2>
-
-    <div class="cs-grid" style="margin-top:48px;">
-      <div class="cs-card">
-        <div class="cs-name">Melting Forest</div>
-        <div class="cs-type">Content Strategy + Email Marketing</div>
-        <p>Developed strategic content and email communication around the brand's products, positioning, and customer journey.</p>
-        <div class="tag-row" style="margin-bottom:22px;">
-          <span class="tag">Content Strategy</span><span class="tag">Email Marketing</span><span class="tag">Klaviyo</span><span class="tag">Copywriting</span>
-        </div>
-        <div class="cs-stats">
-          <div class="cs-stat"><span class="num">187%</span><span class="label">Follower Growth</span></div>
-          <div class="cs-stat"><span class="num">35%</span><span class="label">Email Open Rate</span></div>
-          <div class="cs-stat"><span class="num">$47K</span><span class="label">Email Revenue</span></div>
-        </div>
+  <!-- CLIENT WORK -->
+  <section class="alt" id="work">
+    <div class="container reveal">
+      <div class="section-head">
+        <div class="eyebrow">Client Work &amp; Writing Samples</div>
+        <h2 class="section-title">Brands I've Helped Grow</h2>
+        <p class="section-lead">Website links and writing samples for each client. Click to view live stores or read my work.</p>
       </div>
 
-      <div class="cs-card">
-        <div class="cs-name">CBD Living</div>
-        <div class="cs-type">Product Copy + Email Content</div>
-        <p>Worked on product and email content with a focus on clearer messaging, stronger product communication, and a premium customer experience.</p>
-        <div class="tag-row" style="margin-bottom:22px;">
-          <span class="tag">Product Copy</span><span class="tag">Email Marketing</span><span class="tag">Copywriting</span><span class="tag">E-commerce</span>
-        </div>
-        <div class="cs-stats">
-          <div class="cs-stat"><span class="num">23%</span><span class="label">Conversion Increase</span></div>
-          <div class="cs-stat"><span class="num">42%</span><span class="label">Email Improvement</span></div>
-          <div class="cs-stat"><span class="num">$89K</span><span class="label">Revenue</span></div>
-        </div>
-      </div>
+      <div class="proj-grid">
+        <article class="proj-card">
+          <div class="proj-tag">Copywriting · Figma Design · E-commerce</div>
+          <h3>CBD Living</h3>
+          <p>Rewrote product pages and emails to sound premium, not generic. Used Figma to build a design system they could use forever. Result: 23% higher conversions and customers willing to pay more.</p>
+          <div class="link-row">
+            <a href="https://cbdliving.com/" target="_blank" rel="noopener">🌐 Website</a>
+            <a href="https://docs.google.com/document/d/1Pc1SCKfJBmvQ-WNZjaqPwQ8uxiTET5QYsbSBf6OnnjM/edit" target="_blank" rel="noopener">📄 Sample 1</a>
+            <a href="https://docs.google.com/document/d/19YjsROybMIow7TofZcvswjtl-3wtPzW0UAy4LjEN0xo/edit" target="_blank" rel="noopener">📄 Sample 2</a>
+            <a href="https://docs.google.com/document/d/13TB9BEhG1z0EKhBQN8Eslw8HS6EI4VUiunuarzA0XVk/edit" target="_blank" rel="noopener">📄 Sample 3</a>
+            <a href="https://docs.google.com/document/d/1D6iTkzUivuRV1PsLMpDs6gpUh2BDymXKz38KTnrfnE0/edit" target="_blank" rel="noopener">📄 Sample 4</a>
+            <a href="https://docs.google.com/document/d/11W68e8SujGnfm6FcgxJ6I9RqSLMHR-Xg531vFmjIcMs/edit" target="_blank" rel="noopener">📄 Sample 5</a>
+          </div>
+        </article>
 
-      <div class="cs-card">
-        <div class="cs-name">Owl &amp; Ox</div>
-        <div class="cs-type">Brand Positioning + Web Content</div>
-        <p>Worked on stronger brand messaging and customer-focused content designed to support premium positioning.</p>
-        <div class="tag-row" style="margin-bottom:22px;">
-          <span class="tag">Brand Messaging</span><span class="tag">Web Content</span><span class="tag">Copywriting</span><span class="tag">Positioning</span>
-        </div>
-        <div class="cs-stats">
-          <div class="cs-stat"><span class="num">156%</span><span class="label">Revenue Growth</span></div>
-          <div class="cs-stat"><span class="num">54%</span><span class="label">Price Increase Capability</span></div>
-          <div class="cs-stat"><span class="num">3.2×</span><span class="label">Higher Customer LTV</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <article class="proj-card">
+          <div class="proj-tag">Content Strategy · Email Marketing · Klaviyo</div>
+          <h3>Melting Forest</h3>
+          <p>Built their entire content strategy from scratch. Taught them how to tell their sustainability story in a way customers actually cared about. Grew followers 187% and made emails actually valuable.</p>
+          <div class="link-row">
+            <a href="https://meltingforest.com/" target="_blank" rel="noopener">🌐 Website</a>
+            <a href="https://docs.google.com/document/d/12t_2RB3IXmqPpiFsF06DilZuyHOUQQxHeT387ipck-0/edit" target="_blank" rel="noopener">📄 Sample 1</a>
+            <a href="https://docs.google.com/document/d/1ofMEkIzvFJEPd3e4OvFpw_TeilGjzyiTCNKGX_NzWIY/edit" target="_blank" rel="noopener">📄 Sample 2</a>
+            <a href="https://docs.google.com/document/d/16GVaQKSYRkkRxQ6Igh53OLedab4LnNAglqC0b0VOCTc/edit" target="_blank" rel="noopener">📄 Sample 3</a>
+          </div>
+        </article>
 
-<!-- CLIENT WORK -->
-<section class="block alt" id="projects">
-  <div class="inner">
-    <div class="eyebrow">Client Work</div>
-    <h2 class="sec-title">I Help Online Brands Grow Through <span class="accent">Smart Content Strategy.</span></h2>
-    <p class="sec-lead">Compelling copy and data-driven marketing across a range of e-commerce and wellness brands.</p>
+        <article class="proj-card">
+          <div class="proj-tag">Copywriting · Brand Strategy</div>
+          <h3>Smoking Dog</h3>
+          <p>Rewrote product copy from technical to conversational. Made their brand voice consistent everywhere. Customers got it, and they understood why the products are worth the price.</p>
+          <div class="link-row">
+            <a href="https://smokingdog.com/" target="_blank" rel="noopener">🌐 Website</a>
+            <a href="https://docs.google.com/document/d/1gGSlN-uswJQeJGEBNmA7BRWHoWB6-y0GAoh_SDsJnlg/edit" target="_blank" rel="noopener">📄 Sample 1</a>
+            <a href="https://docs.google.com/document/d/12xFagsaizs-LSbQDqKnPKBfpF9nbhZZsVfq7F4yW9Zc/edit" target="_blank" rel="noopener">📄 Sample 2</a>
+            <a href="https://docs.google.com/document/d/1mojrss1CksSvU82h3kZLi3lbUcfxmo2F9vibiUvdXyA/edit" target="_blank" rel="noopener">📄 Sample 3</a>
+            <a href="https://docs.google.com/document/d/1435ajfmJG3LoBBYPIW2uXyU5p4NzK2ro4goEc8EQhlk/edit" target="_blank" rel="noopener">📄 Sample 4</a>
+          </div>
+        </article>
 
-    <div class="proj-grid" style="margin-top:48px;">
-      <div class="proj-card">
-        <div class="proj-tag">Copywriting · Figma Design</div>
-        <h3>CBD Living</h3>
-        <p>Rewrote product pages and emails to sound premium, not generic. Used Figma to build a design system they could use forever. Result: 23% higher conversions and customers willing to pay more.</p>
-        <div class="link-row">
-          <a href="https://cbdliving.com/" target="_blank" rel="noopener">🌐 Website</a>
-          <a href="https://areebaarif999.github.io/CASE_STUDY_2_CBD_LIVING.html" target="_blank" rel="noopener">📊 Case Study</a>
-          <a href="https://docs.google.com/document/d/1Pc1SCKfJBmvQ-WNZjaqPwQ8uxiTET5QYsbSBf6OnnjM/edit" target="_blank" rel="noopener">📄 Sample 1</a>
-          <a href="https://docs.google.com/document/d/19YjsROybMIow7TofZcvswjtl-3wtPzW0UAy4LjEN0xo/edit" target="_blank" rel="noopener">📄 Sample 2</a>
-          <a href="https://docs.google.com/document/d/13TB9BEhG1z0EKhBQN8Eslw8HS6EI4VUiunuarzA0XVk/edit" target="_blank" rel="noopener">📄 Sample 3</a>
-          <a href="https://docs.google.com/document/d/1D6iTkzUivuRV1PsLMpDs6gpUh2BDymXKz38KTnrfnE0/edit" target="_blank" rel="noopener">📄 Sample 4</a>
-          <a href="https://docs.google.com/document/d/11W68e8SujGnfm6FcgxJ6I9RqSLMHR-Xg531vFmjIcMs/edit" target="_blank" rel="noopener">📄 Sample 5</a>
-        </div>
-      </div>
+        <article class="proj-card">
+          <div class="proj-tag">Content Calendars · Email Flows</div>
+          <h3>Euphoric Herbals</h3>
+          <p>Created content strategies and email sequences that actually educated customers about why herbals matter. Built a content calendar they could run independently.</p>
+          <div class="link-row">
+            <a href="https://www.euphoricherbals.com/" target="_blank" rel="noopener">🌐 Website</a>
+            <a href="https://docs.google.com/document/d/1ItBc8pK2M2_HGmN7hO2YmGq4uDhEnHN5stJkLxMSulk/edit" target="_blank" rel="noopener">📄 Sample 1</a>
+            <a href="https://docs.google.com/document/d/1gG9tOsPv8CQJxgqCXeRyabDz1hU3rq6uIUvTPcgzad0/edit" target="_blank" rel="noopener">📄 Sample 2</a>
+            <a href="https://docs.google.com/document/d/1zH8HEbO5l_IvTRIS69Yve6kT0a38f2bqjJQhhCgP1tk/edit" target="_blank" rel="noopener">📄 Sample 3</a>
+            <a href="https://docs.google.com/document/d/1vsyGxpMeunfhSkECJQQbBH7hiLtXghvRxKOJvszQuqo/edit" target="_blank" rel="noopener">📄 Sample 4</a>
+          </div>
+        </article>
 
-      <div class="proj-card">
-        <div class="proj-tag">Content Strategy · Email Marketing</div>
-        <h3>Melting Forest</h3>
-        <p>Built their entire content strategy from scratch. Taught them how to tell their sustainability story in a way customers actually cared about. Grew followers 187% and made emails actually valuable.</p>
-        <div class="link-row">
-          <a href="https://meltingforest.com/" target="_blank" rel="noopener">🌐 Website</a>
-          <a href="https://areebaarif999.github.io/CASE_STUDY_1_MELTING_FOREST.html" target="_blank" rel="noopener">📊 Case Study</a>
-          <a href="https://docs.google.com/document/d/12t_2RB3IXmqPpiFsF06DilZuyHOUQQxHeT387ipck-0/edit" target="_blank" rel="noopener">📄 Sample 1</a>
-          <a href="https://docs.google.com/document/d/1ofMEkIzvFJEPd3e4OvFpw_TeilGjzyiTCNKGX_NzWIY/edit" target="_blank" rel="noopener">📄 Sample 2</a>
-          <a href="https://docs.google.com/document/d/16GVaQKSYRkkRxQ6Igh53OLedab4LnNAglqC0b0VOCTc/edit" target="_blank" rel="noopener">📄 Sample 3</a>
-        </div>
-      </div>
+        <article class="proj-card">
+          <div class="proj-tag">Brand Strategy · Web Content · Positioning</div>
+          <h3>Owl &amp; Ox</h3>
+          <p>Repositioned them from a commodity brand to luxury. Changed how they talked about products, who they targeted, everything. They raised prices 54%, revenue grew 156%, and customers became actual fans.</p>
+          <div class="link-row">
+            <a href="https://owlandox.co/" target="_blank" rel="noopener">🌐 Website</a>
+            <a href="https://docs.google.com/document/d/1nlMlaCcJKPII0N54ajvGqSQueCFrd4Lpk2a4lv1qItk/edit" target="_blank" rel="noopener">📄 Sample 1</a>
+            <a href="https://docs.google.com/document/d/1jq4pWvNUenB7v8Gi_ebHMo-0z0BoCiXTeezgUmCITWU/edit" target="_blank" rel="noopener">📄 Sample 2</a>
+          </div>
+        </article>
 
-      <div class="proj-card">
-        <div class="proj-tag">Copywriting · Brand Strategy</div>
-        <h3>Smoking Dog</h3>
-        <p>Rewrote product copy from technical to conversational. Made their brand voice consistent everywhere. Customers got it, and they understood why the products are worth the price.</p>
-        <div class="link-row">
-          <a href="https://smokingdog.com/" target="_blank" rel="noopener">🌐 Website</a>
-          <a href="https://docs.google.com/document/d/1gGSlN-uswJQeJGEBNmA7BRWHoWB6-y0GAoh_SDsJnlg/edit" target="_blank" rel="noopener">📄 Sample 1</a>
-          <a href="https://docs.google.com/document/d/12xFagsaizs-LSbQDqKnPKBfpF9nbhZZsVfq7F4yW9Zc/edit" target="_blank" rel="noopener">📄 Sample 2</a>
-          <a href="https://docs.google.com/document/d/1mojrss1CksSvU82h3kZLi3lbUcfxmo2F9vibiUvdXyA/edit" target="_blank" rel="noopener">📄 Sample 3</a>
-          <a href="https://docs.google.com/document/d/1435ajfmJG3LoBBYPIW2uXyU5p4NzK2ro4goEc8EQhlk/edit" target="_blank" rel="noopener">📄 Sample 4</a>
-        </div>
-      </div>
+        <article class="proj-card">
+          <div class="proj-tag">Email Marketing · Content Strategy</div>
+          <h3>Blue Grass Vitamins</h3>
+          <p>Built their whole content and email strategy around helping people understand why vitamins matter. Made them sound expert, not salesy.</p>
+          <div class="link-row">
+            <a href="https://www.bluegrassvitamins.com/" target="_blank" rel="noopener">🌐 Website</a>
+            <a href="https://docs.google.com/document/d/1gvtUg0yqlhe7pCMnNHGSr7uRsRw-dhQ4hzMfNp4fPS4/edit" target="_blank" rel="noopener">📄 Sample 1</a>
+            <a href="https://docs.google.com/document/d/14UIfX8XIHrtElPnG8K98ESuNamThWlFrOMPG6VQojYI/edit" target="_blank" rel="noopener">📄 Sample 2</a>
+            <a href="https://docs.google.com/document/d/1HNfkaaZ4R1HcJRBIMNzG3GEuuYaW0CHtdvv1PNXhrcw/edit" target="_blank" rel="noopener">📄 Sample 3</a>
+          </div>
+        </article>
 
-      <div class="proj-card">
-        <div class="proj-tag">Content Calendars · Email Flows</div>
-        <h3>Euphoric Herbals</h3>
-        <p>Created content strategies and email sequences that actually educated customers about why herbals matter. Built a content calendar they could run independently.</p>
-        <div class="link-row">
-          <a href="https://www.euphoricherbals.com/" target="_blank" rel="noopener">🌐 Website</a>
-          <a href="https://docs.google.com/document/d/1ItBc8pK2M2_HGmN7hO2YmGq4uDhEnHN5stJkLxMSulk/edit" target="_blank" rel="noopener">📄 Sample 1</a>
-          <a href="https://docs.google.com/document/d/1gG9tOsPv8CQJxgqCXeRyabDz1hU3rq6uIUvTPcgzad0/edit" target="_blank" rel="noopener">📄 Sample 2</a>
-          <a href="https://docs.google.com/document/d/1zH8HEbO5l_IvTRIS69Yve6kT0a38f2bqjJQhhCgP1tk/edit" target="_blank" rel="noopener">📄 Sample 3</a>
-          <a href="https://docs.google.com/document/d/1vsyGxpMeunfhSkECJQQbBH7hiLtXghvRxKOJvszQuqo/edit" target="_blank" rel="noopener">📄 Sample 4</a>
-        </div>
-      </div>
+        <article class="proj-card">
+          <div class="proj-tag">Technical Writing · Copywriting</div>
+          <h3>Kaizen Electronics</h3>
+          <p>Translated technical specs into human language. Made electronics sound interesting to people who aren't tech nerds.</p>
+          <div class="link-row">
+            <a href="https://kaizenelectrics.com/" target="_blank" rel="noopener">🌐 Website</a>
+            <a href="https://docs.google.com/document/d/1YB4RdSX9Tju01sOhFlWA_hlCmFNHlSI4Z-c2SzBZ1gA/edit" target="_blank" rel="noopener">📄 Portfolio</a>
+          </div>
+        </article>
 
-      <div class="proj-card">
-        <div class="proj-tag">Brand Strategy · Web Content</div>
-        <h3>Owl &amp; Ox</h3>
-        <p>Repositioned them from a commodity brand to luxury. Changed how they talked about products, who they targeted, everything. They raised prices 54%, revenue grew 156%, and customers became actual fans.</p>
-        <div class="link-row">
-          <a href="https://owlandox.co/" target="_blank" rel="noopener">🌐 Website</a>
-          <a href="https://areebaarif999.github.io/CASE_STUDY_3_OWL_AND_OX.html" target="_blank" rel="noopener">📊 Case Study</a>
-          <a href="https://docs.google.com/document/d/1nlMlaCcJKPII0N54ajvGqSQueCFrd4Lpk2a4lv1qItk/edit" target="_blank" rel="noopener">📄 Sample 1</a>
-          <a href="https://docs.google.com/document/d/1jq4pWvNUenB7v8Gi_ebHMo-0z0BoCiXTeezgUmCITWU/edit" target="_blank" rel="noopener">📄 Sample 2</a>
-        </div>
-      </div>
+        <article class="proj-card">
+          <div class="proj-tag">Health Content · Brand Positioning</div>
+          <h3>Mana Fest Health</h3>
+          <p>Created content that made health feel accessible, not preachy. Built email campaigns that people actually wanted to open.</p>
+          <div class="link-row">
+            <a href="https://manafesthealth.com/" target="_blank" rel="noopener">🌐 Website</a>
+            <a href="https://docs.google.com/document/d/1-u5VoRyrK9V_BjQ5BQBdNWhb295OOYv61GVH-mO_CH8/edit" target="_blank" rel="noopener">📄 Sample 1</a>
+            <a href="https://docs.google.com/document/d/1xci4hK48Cr9_mAb0flJY82iF2GtljpghoCqTHmnKF68/edit" target="_blank" rel="noopener">📄 Sample 2</a>
+          </div>
+        </article>
 
-      <div class="proj-card">
-        <div class="proj-tag">Email Marketing · Content Strategy</div>
-        <h3>Blue Grass Vitamins</h3>
-        <p>Built their whole content and email strategy around helping people understand why vitamins matter. Made them sound expert, not salesy.</p>
-        <div class="link-row">
-          <a href="https://www.bluegrassvitamins.com/" target="_blank" rel="noopener">🌐 Website</a>
-          <a href="https://docs.google.com/document/d/1gvtUg0yqlhe7pCMnNHGSr7uRsRw-dhQ4hzMfNp4fPS4/edit" target="_blank" rel="noopener">📄 Sample 1</a>
-          <a href="https://docs.google.com/document/d/14UIfX8XIHrtElPnG8K98ESuNamThWlFrOMPG6VQojYI/edit" target="_blank" rel="noopener">📄 Sample 2</a>
-          <a href="https://docs.google.com/document/d/1HNfkaaZ4R1HcJRBIMNzG3GEuuYaW0CHtdvv1PNXhrcw/edit" target="_blank" rel="noopener">📄 Sample 3</a>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-tag">Technical Writing · Copywriting</div>
-        <h3>Kaizen Electronics</h3>
-        <p>Translated technical specs into human language. Made electronics sound interesting to people who aren't tech nerds.</p>
-        <div class="link-row">
-          <a href="https://kaizenelectrics.com/" target="_blank" rel="noopener">🌐 Website</a>
-          <a href="https://docs.google.com/document/d/1YB4RdSX9Tju01sOhFlWA_hlCmFNHlSI4Z-c2SzBZ1gA/edit" target="_blank" rel="noopener">📄 Portfolio</a>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-tag">Health Content · Brand Positioning</div>
-        <h3>Mana Fest Health</h3>
-        <p>Created content that made health feel accessible, not preachy. Built email campaigns that people actually wanted to open.</p>
-        <div class="link-row">
-          <a href="https://manafesthealth.com/" target="_blank" rel="noopener">🌐 Website</a>
-          <a href="https://docs.google.com/document/d/1-u5VoRyrK9V_BjQ5BQBdNWhb295OOYv61GVH-mO_CH8/edit" target="_blank" rel="noopener">📄 Sample 1</a>
-          <a href="https://docs.google.com/document/d/1xci4hK48Cr9_mAb0flJY82iF2GtljpghoCqTHmnKF68/edit" target="_blank" rel="noopener">📄 Sample 2</a>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-tag">SEO Copywriting · Shopify E-commerce</div>
-        <h3>A-DIY</h3>
-        <p>Currently working on SEO-focused website content, blogs, web pages, product-related content, research, and Shopify e-commerce coordination.</p>
-        <div class="link-row">
-          <a href="https://a-diy.com/" target="_blank" rel="noopener">🌐 Website</a>
-        </div>
+        <article class="proj-card">
+          <div class="proj-tag">SEO Copywriting · Shopify E-commerce · Current</div>
+          <h3>A-DIY</h3>
+          <p>Currently managing SEO website content, blogs, product copy, research, and Shopify e-commerce coordination for a professional DIY deck kit brand.</p>
+          <div class="link-row">
+            <a href="https://a-diy.com/" target="_blank" rel="noopener">🌐 Website</a>
+          </div>
+        </article>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SERVICES -->
-<section class="block" id="services">
-  <div class="inner">
-    <div class="eyebrow">Services</div>
-    <h2 class="sec-title">What I Can Do <span class="accent">For Your Brand.</span></h2>
+  <!-- EXPERIENCE TIMELINE -->
+  <section id="experience-timeline">
+    <div class="container reveal">
+      <div class="section-head">
+        <div class="eyebrow">Professional Experience</div>
+        <h2 class="section-title">Strategy Meets Execution</h2>
+        <p class="section-lead">Project management, e-commerce, content, and client success across global brands.</p>
+      </div>
 
-    <div class="svc-grid" style="margin-top:48px;">
-      <div class="svc-card">
-        <h3>SEO</h3>
-        <ul><li>SEO Copywriting</li><li>SEO Blogs</li><li>SEO Website Content</li><li>Keyword Research</li><li>Search Intent</li><li>On-Page Content</li><li>Content Optimization</li></ul>
-      </div>
-      <div class="svc-card">
-        <h3>Web &amp; Copywriting</h3>
-        <ul><li>Website Copy</li><li>Website Pages</li><li>Landing Pages</li><li>Product Pages</li><li>Product Descriptions</li><li>E-commerce Copy</li><li>Conversion Copy</li><li>Sales Copy</li><li>Brand Messaging</li></ul>
-      </div>
-      <div class="svc-card">
-        <h3>Shopify</h3>
-        <ul><li>Shopify E-commerce Coordination</li><li>Product Content</li><li>Product Descriptions</li><li>Website Content</li><li>Collection/Category Content</li><li>Store Content Coordination</li><li>E-commerce Copywriting</li></ul>
-      </div>
-      <div class="svc-card">
-        <h3>Amazon</h3>
-        <ul><li>Amazon Listing Copy</li><li>Amazon SEO Content</li><li>Product Titles</li><li>Bullet Points</li><li>Product Descriptions</li><li>A+ Content Copy</li></ul>
-      </div>
-      <div class="svc-card">
-        <h3>Email</h3>
-        <ul><li>Email Copywriting</li><li>Email Content Planning</li><li>Email Strategy</li><li>Campaign Planning</li><li>Content Calendars</li><li>Promotional Emails</li><li>Product Launch Emails</li><li>Reminder Emails</li><li>Last-Call Emails</li><li>Retention Content</li><li>Klaviyo</li></ul>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-role">Project Manager &amp; Client Success Lead</span>
+            <span class="timeline-dates">Jul 2025 to Present</span>
+          </div>
+          <div class="timeline-company">The Emissary Agency</div>
+          <div class="timeline-location">🌍 Remote, USA</div>
+          <ul>
+            <li>Bridge between client vision and execution for e-commerce brands.</li>
+            <li>Content strategies that rank and actually get read.</li>
+            <li>A/B tests on Shopify stores with measurable conversion wins (+30%).</li>
+            <li>Email campaigns with 35% open rates vs. industry average ~15%.</li>
+            <li>Coordinate designers, developers, and writers to keep projects on track.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-role">Social Media &amp; Email Marketing Executive</span>
+            <span class="timeline-dates">Aug 2025 to Jun 2026 · Part-time</span>
+          </div>
+          <div class="timeline-company">ShipMagz</div>
+          <div class="timeline-location">🌍 Remote, Germany</div>
+          <ul>
+            <li>Managed social media for a global logistics company.</li>
+            <li>Built strategic content calendars, not random posting.</li>
+            <li>Tracked performance with Google Analytics and optimized winners.</li>
+            <li>Designed and sent converting email campaigns via Brevo.</li>
+            <li>Created video content with CapCut and HeyGen for social.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-role">Owner &amp; E-Commerce Manager</span>
+            <span class="timeline-dates">Jan 2024 to Dec 2024</span>
+          </div>
+          <div class="timeline-company">Bell &amp; Buy (Founder)</div>
+          <div class="timeline-location">🌍 UAE Market</div>
+          <ul>
+            <li>Built an e-commerce business from zero to 80% sales growth in one year.</li>
+            <li>Handled product sourcing, Amazon &amp; Shopify listings, and operations.</li>
+            <li>Ran Meta Ads and TikTok campaigns focused on ROI, not vanity metrics.</li>
+            <li>Learned firsthand what it takes to sell online, not just write about it.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-role">Video Content Creator &amp; Instructor</span>
+            <span class="timeline-dates">May 2025 to Oct 2025</span>
+          </div>
+          <div class="timeline-company">PACE Online School</div>
+          <div class="timeline-location">🌍 Pakistan &amp; Saudi Arabia</div>
+          <ul>
+            <li>Created enrollment-driving video content with CapCut.</li>
+            <li>Managed student experience, progress tracking, and parent communication.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-role">Academic Research Writer</span>
+            <span class="timeline-dates">Mar 2021 to Dec 2023</span>
+          </div>
+          <div class="timeline-company">OHSPS Inc.</div>
+          <div class="timeline-location">🌍 Remote, Saudi Arabia</div>
+          <ul>
+            <li>Technical research writing for NEBOSH, NVQ, IOSH qualifications.</li>
+            <li>Content strategies under strict deadlines and quality standards.</li>
+          </ul>
+        </article>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CORE SKILLS -->
-<section class="block alt" id="skills">
-  <div class="inner">
-    <div class="eyebrow">Core Skills</div>
-    <h2 class="sec-title">My <span class="accent">Skill Set.</span></h2>
-
-    <div class="skill-tabs" id="skillTabs">
-      <button class="skill-tab active" data-panel="seo">SEO &amp; Content</button>
-      <button class="skill-tab" data-panel="copy">Copywriting</button>
-      <button class="skill-tab" data-panel="shopify">Shopify</button>
-      <button class="skill-tab" data-panel="amazon">Amazon</button>
-      <button class="skill-tab" data-panel="email">Email</button>
-      <button class="skill-tab" data-panel="marketing">Digital Marketing</button>
-    </div>
-
-    <div id="skillPanels">
-      <div class="skill-panel active" data-panel="seo">
-        <div class="mini-list"><span>SEO Copywriting</span><span>SEO Content Writing</span><span>SEO Blog Writing</span><span>Keyword Research</span><span>Search Intent</span><span>Content Strategy</span><span>Website Content</span><span>Long-Form Content</span><span>On-Page SEO</span></div>
+  <!-- PROCESS -->
+  <section class="alt">
+    <div class="container reveal">
+      <div class="section-head center">
+        <div class="eyebrow">How I Work</div>
+        <h2 class="section-title">Strategy Before Execution</h2>
+        <p class="section-lead center">Every project follows a clear process, so you always know what's happening and why.</p>
       </div>
-      <div class="skill-panel" data-panel="copy">
-        <div class="mini-list"><span>Web Copy</span><span>Website Pages</span><span>Landing Page Copy</span><span>Product Copy</span><span>Product Descriptions</span><span>E-commerce Copywriting</span><span>Conversion Copy</span><span>Sales Copy</span><span>Brand Messaging</span><span>Headlines &amp; Hooks</span><span>CTA Strategy</span></div>
-      </div>
-      <div class="skill-panel" data-panel="shopify">
-        <div class="mini-list"><span>Shopify</span><span>Shopify E-commerce Coordination</span><span>Product Content</span><span>Product Pages</span><span>Collection Content</span><span>E-commerce Content</span><span>Store Content Coordination</span></div>
-      </div>
-      <div class="skill-panel" data-panel="amazon">
-        <div class="mini-list"><span>Amazon Content Writing</span><span>Amazon Listing Copy</span><span>Amazon SEO</span><span>Product Titles</span><span>Bullet Points</span><span>Product Descriptions</span><span>A+ Content</span></div>
-      </div>
-      <div class="skill-panel" data-panel="email">
-        <div class="mini-list"><span>Email Copywriting</span><span>Email Content Planning</span><span>Email Strategy</span><span>Campaign Planning</span><span>Content Calendars</span><span>Promotional Emails</span><span>Launch Emails</span><span>Retention Content</span><span>Klaviyo</span></div>
-      </div>
-      <div class="skill-panel" data-panel="marketing">
-        <div class="mini-list"><span>Meta Ads</span><span>TikTok Ads</span><span>Ad Copy</span><span>Creative Strategy</span><span>Competitor Research</span><span>Market Research</span></div>
+      <div class="process-flow">
+        <div class="process-step">1. Research</div>
+        <span class="process-arrow">→</span>
+        <div class="process-step">2. Strategy</div>
+        <span class="process-arrow">→</span>
+        <div class="process-step">3. Create</div>
+        <span class="process-arrow">→</span>
+        <div class="process-step">4. Optimize</div>
+        <span class="process-arrow">→</span>
+        <div class="process-step">5. Convert</div>
       </div>
     </div>
+  </section>
 
-    <h3 class="subhead">Tools &amp; Platforms</h3>
-    <div class="tool-grid">
-      <div class="tool-cat"><h4>E-commerce</h4><p>Shopify | Amazon</p></div>
-      <div class="tool-cat"><h4>Email Marketing</h4><p>Klaviyo | Brevo</p></div>
-      <div class="tool-cat"><h4>Analytics &amp; Research</h4><p>Google Analytics | Google Tag Manager | Microsoft Clarity | BuiltWith</p></div>
-      <div class="tool-cat"><h4>Creative</h4><p>Canva | Figma | CapCut | AI Tools</p></div>
-      <div class="tool-cat"><h4>Productivity</h4><p>Google Workspace | Slack | Notion</p></div>
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container reveal">
+      <div class="section-head center">
+        <div class="eyebrow">Skills &amp; Tools</div>
+        <h2 class="section-title">What I Bring to Your Brand</h2>
+      </div>
+
+      <div class="skill-tabs" id="skillTabs">
+        <button class="skill-tab active" data-panel="pm">Project Management</button>
+        <button class="skill-tab" data-panel="shopify">Shopify &amp; E-commerce</button>
+        <button class="skill-tab" data-panel="copy">Copy &amp; SEO</button>
+        <button class="skill-tab" data-panel="design">Design</button>
+        <button class="skill-tab" data-panel="email">Email &amp; Marketing</button>
+        <button class="skill-tab" data-panel="amazon">Amazon</button>
+      </div>
+
+      <div id="skillPanels">
+        <div class="skill-panel active" data-panel="pm">
+          <div class="mini-list">
+            <span>Project Planning</span><span>Client Success</span><span>Team Coordination</span><span>Timeline Management</span><span>A/B Testing</span><span>Performance Tracking</span><span>Cross-functional Communication</span><span>Deliverable Management</span>
+          </div>
+        </div>
+        <div class="skill-panel" data-panel="shopify">
+          <div class="mini-list">
+            <span>Shopify E-commerce Coordination</span><span>Product Pages</span><span>Collection Content</span><span>Store Content Updates</span><span>Conversion Copy</span><span>E-commerce Strategy</span><span>Product Messaging</span>
+          </div>
+        </div>
+        <div class="skill-panel" data-panel="copy">
+          <div class="mini-list">
+            <span>SEO Copywriting</span><span>Website Content</span><span>Landing Pages</span><span>Blog Writing</span><span>Keyword Research</span><span>Search Intent</span><span>Brand Messaging</span><span>CTA Strategy</span><span>Conversion Copy</span>
+          </div>
+        </div>
+        <div class="skill-panel" data-panel="design">
+          <div class="mini-list">
+            <span>Canva</span><span>Figma</span><span>Email Layouts</span><span>Social Graphics</span><span>Design Systems</span><span>Visual Content Direction</span><span>CapCut</span>
+          </div>
+        </div>
+        <div class="skill-panel" data-panel="email">
+          <div class="mini-list">
+            <span>Klaviyo</span><span>Brevo</span><span>Email Strategy</span><span>Campaign Planning</span><span>Content Calendars</span><span>Launch Sequences</span><span>Retention Flows</span><span>Meta Ads</span><span>TikTok Ads</span><span>Google Analytics</span>
+          </div>
+        </div>
+        <div class="skill-panel" data-panel="amazon">
+          <div class="mini-list">
+            <span>Amazon Listing Copy</span><span>Product Titles</span><span>Bullet Points</span><span>A+ Content</span><span>Amazon SEO</span><span>Product Descriptions</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-grid">
+        <div class="tool-cat"><h4>E-commerce</h4><p>Shopify · Amazon</p></div>
+        <div class="tool-cat"><h4>Email</h4><p>Klaviyo · Brevo</p></div>
+        <div class="tool-cat"><h4>Design</h4><p>Canva · Figma · CapCut</p></div>
+        <div class="tool-cat"><h4>Analytics</h4><p>Google Analytics · GTM · Clarity · BuiltWith</p></div>
+        <div class="tool-cat"><h4>Productivity</h4><p>Notion · Slack · Google Workspace</p></div>
+        <div class="tool-cat"><h4>AI Tools</h4><p>Claude · ChatGPT · Content workflows</p></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- WHY HIRE ME -->
-<section class="block">
-  <div class="inner">
-    <div class="eyebrow">Why Hire Me?</div>
-    <h2 class="sec-title">You Don't Need Someone Who <span class="accent">Just Writes.</span></h2>
-    <p class="sec-lead">You need someone who understands what to write, who you're writing for, why it matters, and what the content needs to achieve. I bring together:</p>
-
-    <div class="why-grid" style="margin-top:44px;">
-      <div class="why-item"><h3>SEO</h3><p>So your content can be discovered by the right audience.</p></div>
-      <div class="why-item"><h3>Copywriting</h3><p>So your message is clear, persuasive, and memorable.</p></div>
-      <div class="why-item"><h3>Shopify</h3><p>So your e-commerce content supports the customer's buying journey.</p></div>
-      <div class="why-item"><h3>Amazon</h3><p>So your product listings communicate value quickly and effectively.</p></div>
-      <div class="why-item"><h3>Email Strategy</h3><p>So your campaigns have direction instead of being random promotions.</p></div>
-      <div class="why-item"><h3>Research</h3><p>So content is based on real audience needs and search behavior.</p></div>
-      <div class="why-item"><h3>E-commerce Understanding</h3><p>So the content connects with the way customers actually shop.</p></div>
-      <div class="why-item"><h3>Strategy</h3><p>So every piece of content has a clear purpose.</p></div>
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container reveal">
+      <h2>Let's Work <span style="color:var(--red-bright)">Together.</span></h2>
+      <p>Looking for a copywriter, a project manager, or e-commerce support? Need a mix? Send me a message with what you're looking for. We'll figure out the right fit.</p>
+      <div class="hero-actions" style="margin-bottom:34px;">
+        <a href="mailto:areebaarif999@gmail.com" class="btn btn-primary">Email Me</a>
+        <a href="https://wa.me/923104474940" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp</a>
+      </div>
+      <div class="contact-grid">
+        <a href="mailto:areebaarif999@gmail.com" class="contact-card">
+          <div class="c-icon">✉️</div>
+          <div class="c-label">Email</div>
+          <div class="c-value">areebaarif999@gmail.com</div>
+        </a>
+        <a href="https://wa.me/923104474940" class="contact-card" target="_blank" rel="noopener">
+          <div class="c-icon">💬</div>
+          <div class="c-label">WhatsApp</div>
+          <div class="c-value">+92 310 4474940</div>
+        </a>
+        <a href="https://www.linkedin.com/in/areebaarif/" class="contact-card" target="_blank" rel="noopener">
+          <div class="c-icon">🔗</div>
+          <div class="c-label">LinkedIn</div>
+          <div class="c-value">linkedin.com/in/areebaarif</div>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- WHY MY CONTENT WORKS -->
-<section class="block alt">
-  <div class="inner narrow">
-    <div class="eyebrow">Why My Content Works</div>
-    <h2 class="sec-title">Research-Led. Customer-Focused. <span class="accent">Conversion-Aware.</span></h2>
-
-    <div class="qa-flow">
-      <div class="qa-line"><span class="qtag">NOT</span><span class="qtext">"What should I write?"</span></div>
-      <div class="qa-line"><span class="qtag">I ASK</span><span class="qtext">"What does the customer need to know?"</span></div>
-      <div class="qa-line"><span class="qtag">THEN</span><span class="qtext">"What is the brand trying to achieve?"</span></div>
-      <div class="qa-line"><span class="qtag">FINALLY</span><span class="qtext">"What should the customer do next?"</span></div>
-      <div class="qa-line final"><span class="qtag"></span><span class="qtext">That's how I turn information into strategic content.</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="cta-section" id="contact">
-  <div class="glow-corner" style="bottom:auto; top:-100px; left:auto; right:-150px;"></div>
-  <div class="eyebrow" style="justify-content:center; display:flex;">Let's Talk</div>
-  <h2>Let's Make Your Content <span style="color:var(--red);">Work Harder.</span></h2>
-  <p class="sec-lead" style="margin-left:auto; margin-right:auto; text-align:center;">Your brand deserves more than content that simply fills a page. Let's create content that:</p>
-
-  <div class="want-list">
-    <span>Gets Found.</span><span>Gets Read.</span><span>Builds Trust.</span><span>Drives Action.</span>
-  </div>
-
-  <p class="sec-lead" style="margin-left:auto; margin-right:auto; text-align:center;">Whether you need SEO blogs, website content, Shopify e-commerce copy, Amazon listings, email campaigns, content strategy, or conversion-focused copywriting, let's build something that moves your brand forward.</p>
-
-  <div class="hero-ctas" style="margin-top:36px;">
-    <a href="mailto:areebaarif999@gmail.com" class="btn btn-primary">Let's Work Together</a>
-  </div>
-
-  <div class="contact-grid">
-    <a href="mailto:areebaarif999@gmail.com" class="contact-card">
-      <div class="c-icon">📧</div>
-      <div class="c-label">Email</div>
-      <div class="c-value">areebaarif999@gmail.com</div>
-    </a>
-    <a href="https://wa.me/923104474940" class="contact-card" target="_blank" rel="noopener">
-      <div class="c-icon">💬</div>
-      <div class="c-label">WhatsApp</div>
-      <div class="c-value">+92 310 4474940</div>
-    </a>
-    <a href="https://www.linkedin.com/in/areebaarif/" class="contact-card" target="_blank" rel="noopener">
-      <div class="c-icon">💼</div>
-      <div class="c-label">LinkedIn</div>
-      <div class="c-value">linkedin.com/in/areebaarif</div>
-    </a>
-  </div>
-</section>
+  </section>
+</main>
 
 <footer>
-  <div class="f-name">Areeba Arif</div>
-  <div class="f-roles">SEO Copywriter | E-commerce Content Specialist | Shopify E-commerce Coordinator | Email Content Strategist | Amazon Content Writer</div>
-  <div class="f-copy">© 2026 Areeba Arif. All rights reserved.</div>
+  <div class="container">© 2026 Areeba Arif. SEO Copywriter · E-commerce Manager · Project Lead.</div>
 </footer>
 
-<script>
-  const revealEls = document.querySelectorAll('.inner, .cta-section');
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-  revealEls.forEach(el => revealObserver.observe(el));
-</script>
+<button class="mobile-jump-btn to-home" id="mobileJumpBtn" type="button" aria-label="Go to Home">
+  <svg class="jump-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M12 19V5M12 5L6 11M12 5L18 11" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
 
 <script>
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
-  navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('open');
-    navLinks.classList.toggle('open');
-  });
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.classList.remove('open');
-      navLinks.classList.remove('open');
-    });
-  });
-</script>
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
 
-<script>
-  document.querySelectorAll('.skill-tab').forEach(tab => {
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  const tabs = document.querySelectorAll('.skill-tab');
+  const panels = document.querySelectorAll('.skill-panel');
+  tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      const target = tab.getAttribute('data-panel');
-      document.querySelectorAll('.skill-tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.skill-panel').forEach(p => p.classList.remove('active'));
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
       tab.classList.add('active');
-      document.querySelector('.skill-panel[data-panel="' + target + '"]').classList.add('active');
+      document.querySelector(`.skill-panel[data-panel="${tab.dataset.panel}"]`).classList.add('active');
     });
   });
-</script>
 
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const mobileJumpBtn = document.getElementById('mobileJumpBtn');
+  let nextJump = 'home';
+
+  mobileJumpBtn.addEventListener('click', () => {
+    if (nextJump === 'home') {
+      document.getElementById('home').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      nextJump = 'contact';
+      mobileJumpBtn.classList.remove('to-home');
+      mobileJumpBtn.classList.add('to-contact');
+      mobileJumpBtn.setAttribute('aria-label', 'Go to Contact');
+    } else {
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      nextJump = 'home';
+      mobileJumpBtn.classList.remove('to-contact');
+      mobileJumpBtn.classList.add('to-home');
+      mobileJumpBtn.setAttribute('aria-label', 'Go to Home');
+    }
+  });
+</script>
 </body>
 </html>
