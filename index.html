@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Areeba Arif | SEO Copywriter | E-commerce Manager | Project Lead</title>
-  <meta name="description" content="Hire Areeba Arif for SEO copywriting, project management, or Shopify e-commerce support, or combine what you need. Remote worldwide.">
+  <meta name="description" content="Hire Areeba Arif for SEO copywriting, project management, or Shopify e-commerce support. Remote worldwide. Freelance and contract available.">
   <meta property="og:title" content="Areeba Arif | Copywriter, PM &amp; E-commerce Specialist">
   <meta property="og:description" content="Flexible support for your brand: hire me for copywriting, project management, e-commerce &amp; Shopify, or mix the services you need.">
   <meta property="og:type" content="website">
@@ -1022,15 +1022,96 @@ footer {
   transform: translateY(0);
 }
 
+
+/* Contact form */
+.contact-form {
+  max-width: 640px;
+  margin: 28px auto 0;
+  text-align: left;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 14px;
+}
+
+.contact-form label span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--gray-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 12px 14px;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--red);
+}
+
+.contact-form select option {
+  background: #140505;
+  color: var(--white);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-submit {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.form-note {
+  margin: 12px 0 0 !important;
+  font-size: 0.82rem !important;
+  color: var(--gray-dim) !important;
+  text-align: center;
+}
+
+.cs-card .link-row {
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Mobile jump button: home and contact */
 .mobile-jump-btn {
   display: none;
   position: fixed;
-  bottom: 22px;
-  right: 18px;
+  bottom: 18px;
+  right: 14px;
   z-index: 120;
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   border: none;
   border-radius: 50%;
   background: var(--red);
@@ -1080,13 +1161,26 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  nav {
+    padding: 12px 0;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
   .nav-links {
     position: fixed;
     inset: 0 0 0 auto;
     width: min(280px, 85vw);
     background: var(--bg);
     flex-direction: column;
-    padding: 90px 24px 24px;
+    gap: 18px;
+    padding: 80px 20px 24px;
     transform: translateX(100%);
     transition: transform 0.3s;
     border-left: 1px solid var(--border);
@@ -1104,6 +1198,60 @@ footer {
     display: flex;
   }
 
+  .hero {
+    padding: 42px 0 28px;
+  }
+
+  .hero-badge {
+    margin-bottom: 16px;
+    padding: 6px 12px;
+    font-size: 0.72rem;
+    line-height: 1.35;
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.85rem, 8vw, 2.35rem);
+    line-height: 1.12;
+  }
+
+  .hero-subtitle {
+    margin-top: 14px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .hero-desc {
+    margin-top: 12px;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .btn {
+    padding: 12px 18px;
+    font-size: 0.88rem;
+    width: 100%;
+  }
+
+  .hero-tags {
+    margin-top: 18px;
+    gap: 6px;
+  }
+
+  .hero-tags span {
+    padding: 6px 10px;
+    font-size: 0.72rem;
+  }
+
+  .stats-strip {
+    padding: 8px 0 28px;
+  }
+
   .stats-grid,
   .card-grid,
   .cs-grid,
@@ -1113,10 +1261,165 @@ footer {
   .result-grid,
   .hire-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 14px 12px;
+  }
+
+  .stat-card .num {
+    font-size: 1.45rem;
   }
 
   section {
-    padding: 62px 0;
+    padding: 36px 0;
+  }
+
+  .contact-section {
+    padding: 40px 0 56px;
+  }
+
+  .section-head {
+    margin-bottom: 22px;
+  }
+
+  .section-title {
+    font-size: clamp(1.55rem, 7vw, 2rem);
+    margin-bottom: 10px;
+  }
+
+  .section-lead {
+    font-size: 0.92rem;
+  }
+
+  .eyebrow {
+    margin-bottom: 8px;
+    font-size: 0.7rem;
+  }
+
+  .value-card,
+  .hire-card,
+  .cs-card,
+  .proj-card,
+  .timeline-item,
+  .tool-cat {
+    padding: 16px;
+  }
+
+  .value-card .icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+
+  .hire-combo {
+    margin-top: 16px;
+    padding: 16px;
+  }
+
+  .featured-role {
+    padding: 18px;
+  }
+
+  .two-col {
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .cs-stats {
+    margin: 12px 0;
+    gap: 6px;
+  }
+
+  .cs-stat {
+    padding: 8px 4px;
+  }
+
+  .cs-stat .num {
+    font-size: 0.95rem;
+  }
+
+  .link-row {
+    margin-top: 12px;
+    gap: 6px;
+  }
+
+  .link-row a {
+    padding: 6px 10px;
+    font-size: 0.72rem;
+  }
+
+  .timeline {
+    gap: 10px;
+  }
+
+  .skill-tabs {
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+
+  .skill-tab {
+    padding: 8px 12px;
+    font-size: 0.78rem;
+  }
+
+  .skill-panel {
+    padding: 14px;
+  }
+
+  .mini-list {
+    gap: 6px;
+  }
+
+  .mini-list span {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
+  .process-flow {
+    margin-top: 16px;
+    gap: 6px;
+  }
+
+  .process-step {
+    padding: 8px 12px;
+    font-size: 0.78rem;
+  }
+
+  .contact-form {
+    margin-top: 18px;
+    padding: 14px;
+  }
+
+  .contact-form label {
+    margin-bottom: 10px;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .contact-grid {
+    margin-top: 18px !important;
+    gap: 8px;
+  }
+
+  .contact-card {
+    padding: 14px 12px;
+  }
+
+  .contact-card .c-value {
+    font-size: 0.8rem;
+  }
+
+  footer {
+    padding: 18px 0 72px;
+    font-size: 0.78rem;
   }
 }
 
@@ -1160,13 +1463,13 @@ footer {
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="container reveal">
-      <div class="hero-badge"><span class="dot"></span> Available for copywriting, project management &amp; e-commerce projects</div>
+      <div class="hero-badge"><span class="dot"></span> Remote worldwide · Open to freelance &amp; contract · Copy, PM &amp; e-commerce</div>
       <h1>I Help Brands Get Found, Get Read <span class="accent">&amp; Get Chosen.</span></h1>
       <p class="hero-subtitle">SEO Copywriter · E-commerce Manager · Project Lead · Shopify Coordinator</p>
-      <p class="hero-desc">Need a copywriter? A project manager? Someone to handle Shopify content and e-commerce coordination? I work flexibly. Hire me for one role or combine the services your brand actually needs.</p>
+      <p class="hero-desc">Need a copywriter, a project manager, or Shopify e-commerce support? Hire me for one role or combine what your brand needs. Available for remote freelance and contract work.</p>
       <div class="hero-actions">
-        <a href="#work" class="btn btn-primary">View My Work</a>
-        <a href="#contact" class="btn btn-outline">Let's Work Together</a>
+        <a href="#contact" class="btn btn-primary">Email Me</a>
+        <a href="#work" class="btn btn-outline">View My Work</a>
       </div>
       <div class="hero-tags">
         <span>Project Management</span>
@@ -1385,7 +1688,7 @@ footer {
       <div class="section-head center">
         <div class="eyebrow">Case Studies</div>
         <h2 class="section-title">Results That Speak for Themselves</h2>
-        <p class="section-lead center">Real projects with measurable outcomes. Website links and writing samples for each brand are in the Client Work section below.</p>
+        <p class="section-lead center">Real projects with measurable outcomes. Open the website or sample under each result for proof.</p>
       </div>
 
       <div class="cs-grid">
@@ -1398,6 +1701,10 @@ footer {
             <div class="cs-stat"><span class="num">35%</span><span class="label">Email Open Rate</span></div>
             <div class="cs-stat"><span class="num">$47K</span><span class="label">Email Revenue</span></div>
           </div>
+          <div class="link-row">
+            <a href="https://meltingforest.com/" target="_blank" rel="noopener">Website</a>
+            <a href="https://docs.google.com/document/d/12t_2RB3IXmqPpiFsF06DilZuyHOUQQxHeT387ipck-0/view" target="_blank" rel="noopener">Sample</a>
+          </div>
         </article>
 
         <article class="cs-card">
@@ -1409,6 +1716,10 @@ footer {
             <div class="cs-stat"><span class="num">42%</span><span class="label">Email Improvement</span></div>
             <div class="cs-stat"><span class="num">$89K</span><span class="label">Revenue</span></div>
           </div>
+          <div class="link-row">
+            <a href="https://cbdliving.com/" target="_blank" rel="noopener">Website</a>
+            <a href="https://docs.google.com/document/d/1Pc1SCKfJBmvQ-WNZjaqPwQ8uxiTET5QYsbSBf6OnnjM/view" target="_blank" rel="noopener">Sample</a>
+          </div>
         </article>
 
         <article class="cs-card">
@@ -1419,6 +1730,10 @@ footer {
             <div class="cs-stat"><span class="num">156%</span><span class="label">Revenue Growth</span></div>
             <div class="cs-stat"><span class="num">54%</span><span class="label">Price Increase</span></div>
             <div class="cs-stat"><span class="num">3.2×</span><span class="label">Customer LTV</span></div>
+          </div>
+          <div class="link-row">
+            <a href="https://owlandox.co/" target="_blank" rel="noopener">Website</a>
+            <a href="https://docs.google.com/document/d/1nlMlaCcJKPII0N54ajvGqSQueCFrd4Lpk2a4lv1qItk/view" target="_blank" rel="noopener">Sample</a>
           </div>
         </article>
       </div>
@@ -1440,12 +1755,12 @@ footer {
           <h3>CBD Living</h3>
           <p>Rewrote product pages and emails to sound premium, not generic. Used Figma to build a design system they could use forever. Result: 23% higher conversions and customers willing to pay more.</p>
           <div class="link-row">
-            <a href="https://cbdliving.com/" target="_blank" rel="noopener">🌐 Website</a>
-            <a href="https://docs.google.com/document/d/1Pc1SCKfJBmvQ-WNZjaqPwQ8uxiTET5QYsbSBf6OnnjM/edit" target="_blank" rel="noopener">📄 Sample 1</a>
-            <a href="https://docs.google.com/document/d/19YjsROybMIow7TofZcvswjtl-3wtPzW0UAy4LjEN0xo/edit" target="_blank" rel="noopener">📄 Sample 2</a>
-            <a href="https://docs.google.com/document/d/13TB9BEhG1z0EKhBQN8Eslw8HS6EI4VUiunuarzA0XVk/edit" target="_blank" rel="noopener">📄 Sample 3</a>
-            <a href="https://docs.google.com/document/d/1D6iTkzUivuRV1PsLMpDs6gpUh2BDymXKz38KTnrfnE0/edit" target="_blank" rel="noopener">📄 Sample 4</a>
-            <a href="https://docs.google.com/document/d/11W68e8SujGnfm6FcgxJ6I9RqSLMHR-Xg531vFmjIcMs/edit" target="_blank" rel="noopener">📄 Sample 5</a>
+            <a href="https://cbdliving.com/" target="_blank" rel="noopener">Website</a>
+            <a href="https://docs.google.com/document/d/1Pc1SCKfJBmvQ-WNZjaqPwQ8uxiTET5QYsbSBf6OnnjM/view" target="_blank" rel="noopener">Sample 1</a>
+            <a href="https://docs.google.com/document/d/19YjsROybMIow7TofZcvswjtl-3wtPzW0UAy4LjEN0xo/view" target="_blank" rel="noopener">Sample 2</a>
+            <a href="https://docs.google.com/document/d/13TB9BEhG1z0EKhBQN8Eslw8HS6EI4VUiunuarzA0XVk/view" target="_blank" rel="noopener">Sample 3</a>
+            <a href="https://docs.google.com/document/d/1D6iTkzUivuRV1PsLMpDs6gpUh2BDymXKz38KTnrfnE0/view" target="_blank" rel="noopener">Sample 4</a>
+            <a href="https://docs.google.com/document/d/11W68e8SujGnfm6FcgxJ6I9RqSLMHR-Xg531vFmjIcMs/view" target="_blank" rel="noopener">Sample 5</a>
           </div>
         </article>
 
@@ -1454,10 +1769,10 @@ footer {
           <h3>Melting Forest</h3>
           <p>Built their entire content strategy from scratch. Taught them how to tell their sustainability story in a way customers actually cared about. Grew followers 187% and made emails actually valuable.</p>
           <div class="link-row">
-            <a href="https://meltingforest.com/" target="_blank" rel="noopener">🌐 Website</a>
-            <a href="https://docs.google.com/document/d/12t_2RB3IXmqPpiFsF06DilZuyHOUQQxHeT387ipck-0/edit" target="_blank" rel="noopener">📄 Sample 1</a>
-            <a href="https://docs.google.com/document/d/1ofMEkIzvFJEPd3e4OvFpw_TeilGjzyiTCNKGX_NzWIY/edit" target="_blank" rel="noopener">📄 Sample 2</a>
-            <a href="https://docs.google.com/document/d/16GVaQKSYRkkRxQ6Igh53OLedab4LnNAglqC0b0VOCTc/edit" target="_blank" rel="noopener">📄 Sample 3</a>
+            <a href="https://meltingforest.com/" target="_blank" rel="noopener">Website</a>
+            <a href="https://docs.google.com/document/d/12t_2RB3IXmqPpiFsF06DilZuyHOUQQxHeT387ipck-0/view" target="_blank" rel="noopener">Sample 1</a>
+            <a href="https://docs.google.com/document/d/1ofMEkIzvFJEPd3e4OvFpw_TeilGjzyiTCNKGX_NzWIY/view" target="_blank" rel="noopener">Sample 2</a>
+            <a href="https://docs.google.com/document/d/16GVaQKSYRkkRxQ6Igh53OLedab4LnNAglqC0b0VOCTc/view" target="_blank" rel="noopener">Sample 3</a>
           </div>
         </article>
 
@@ -1466,11 +1781,11 @@ footer {
           <h3>Smoking Dog</h3>
           <p>Rewrote product copy from technical to conversational. Made their brand voice consistent everywhere. Customers got it, and they understood why the products are worth the price.</p>
           <div class="link-row">
-            <a href="https://smokingdog.com/" target="_blank" rel="noopener">🌐 Website</a>
-            <a href="https://docs.google.com/document/d/1gGSlN-uswJQeJGEBNmA7BRWHoWB6-y0GAoh_SDsJnlg/edit" target="_blank" rel="noopener">📄 Sample 1</a>
-            <a href="https://docs.google.com/document/d/12xFagsaizs-LSbQDqKnPKBfpF9nbhZZsVfq7F4yW9Zc/edit" target="_blank" rel="noopener">📄 Sample 2</a>
-            <a href="https://docs.google.com/document/d/1mojrss1CksSvU82h3kZLi3lbUcfxmo2F9vibiUvdXyA/edit" target="_blank" rel="noopener">📄 Sample 3</a>
-            <a href="https://docs.google.com/document/d/1435ajfmJG3LoBBYPIW2uXyU5p4NzK2ro4goEc8EQhlk/edit" target="_blank" rel="noopener">📄 Sample 4</a>
+            <a href="https://smokingdog.com/" target="_blank" rel="noopener">Website</a>
+            <a href="https://docs.google.com/document/d/1gGSlN-uswJQeJGEBNmA7BRWHoWB6-y0GAoh_SDsJnlg/view" target="_blank" rel="noopener">Sample 1</a>
+            <a href="https://docs.google.com/document/d/12xFagsaizs-LSbQDqKnPKBfpF9nbhZZsVfq7F4yW9Zc/view" target="_blank" rel="noopener">Sample 2</a>
+            <a href="https://docs.google.com/document/d/1mojrss1CksSvU82h3kZLi3lbUcfxmo2F9vibiUvdXyA/view" target="_blank" rel="noopener">Sample 3</a>
+            <a href="https://docs.google.com/document/d/1435ajfmJG3LoBBYPIW2uXyU5p4NzK2ro4goEc8EQhlk/view" target="_blank" rel="noopener">Sample 4</a>
           </div>
         </article>
 
@@ -1479,11 +1794,11 @@ footer {
           <h3>Euphoric Herbals</h3>
           <p>Created content strategies and email sequences that actually educated customers about why herbals matter. Built a content calendar they could run independently.</p>
           <div class="link-row">
-            <a href="https://www.euphoricherbals.com/" target="_blank" rel="noopener">🌐 Website</a>
-            <a href="https://docs.google.com/document/d/1ItBc8pK2M2_HGmN7hO2YmGq4uDhEnHN5stJkLxMSulk/edit" target="_blank" rel="noopener">📄 Sample 1</a>
-            <a href="https://docs.google.com/document/d/1gG9tOsPv8CQJxgqCXeRyabDz1hU3rq6uIUvTPcgzad0/edit" target="_blank" rel="noopener">📄 Sample 2</a>
-            <a href="https://docs.google.com/document/d/1zH8HEbO5l_IvTRIS69Yve6kT0a38f2bqjJQhhCgP1tk/edit" target="_blank" rel="noopener">📄 Sample 3</a>
-            <a href="https://docs.google.com/document/d/1vsyGxpMeunfhSkECJQQbBH7hiLtXghvRxKOJvszQuqo/edit" target="_blank" rel="noopener">📄 Sample 4</a>
+            <a href="https://www.euphoricherbals.com/" target="_blank" rel="noopener">Website</a>
+            <a href="https://docs.google.com/document/d/1ItBc8pK2M2_HGmN7hO2YmGq4uDhEnHN5stJkLxMSulk/view" target="_blank" rel="noopener">Sample 1</a>
+            <a href="https://docs.google.com/document/d/1gG9tOsPv8CQJxgqCXeRyabDz1hU3rq6uIUvTPcgzad0/view" target="_blank" rel="noopener">Sample 2</a>
+            <a href="https://docs.google.com/document/d/1zH8HEbO5l_IvTRIS69Yve6kT0a38f2bqjJQhhCgP1tk/view" target="_blank" rel="noopener">Sample 3</a>
+            <a href="https://docs.google.com/document/d/1vsyGxpMeunfhSkECJQQbBH7hiLtXghvRxKOJvszQuqo/view" target="_blank" rel="noopener">Sample 4</a>
           </div>
         </article>
 
@@ -1492,9 +1807,9 @@ footer {
           <h3>Owl &amp; Ox</h3>
           <p>Repositioned them from a commodity brand to luxury. Changed how they talked about products, who they targeted, everything. They raised prices 54%, revenue grew 156%, and customers became actual fans.</p>
           <div class="link-row">
-            <a href="https://owlandox.co/" target="_blank" rel="noopener">🌐 Website</a>
-            <a href="https://docs.google.com/document/d/1nlMlaCcJKPII0N54ajvGqSQueCFrd4Lpk2a4lv1qItk/edit" target="_blank" rel="noopener">📄 Sample 1</a>
-            <a href="https://docs.google.com/document/d/1jq4pWvNUenB7v8Gi_ebHMo-0z0BoCiXTeezgUmCITWU/edit" target="_blank" rel="noopener">📄 Sample 2</a>
+            <a href="https://owlandox.co/" target="_blank" rel="noopener">Website</a>
+            <a href="https://docs.google.com/document/d/1nlMlaCcJKPII0N54ajvGqSQueCFrd4Lpk2a4lv1qItk/view" target="_blank" rel="noopener">Sample 1</a>
+            <a href="https://docs.google.com/document/d/1jq4pWvNUenB7v8Gi_ebHMo-0z0BoCiXTeezgUmCITWU/view" target="_blank" rel="noopener">Sample 2</a>
           </div>
         </article>
 
@@ -1503,10 +1818,10 @@ footer {
           <h3>Blue Grass Vitamins</h3>
           <p>Built their whole content and email strategy around helping people understand why vitamins matter. Made them sound expert, not salesy.</p>
           <div class="link-row">
-            <a href="https://www.bluegrassvitamins.com/" target="_blank" rel="noopener">🌐 Website</a>
-            <a href="https://docs.google.com/document/d/1gvtUg0yqlhe7pCMnNHGSr7uRsRw-dhQ4hzMfNp4fPS4/edit" target="_blank" rel="noopener">📄 Sample 1</a>
-            <a href="https://docs.google.com/document/d/14UIfX8XIHrtElPnG8K98ESuNamThWlFrOMPG6VQojYI/edit" target="_blank" rel="noopener">📄 Sample 2</a>
-            <a href="https://docs.google.com/document/d/1HNfkaaZ4R1HcJRBIMNzG3GEuuYaW0CHtdvv1PNXhrcw/edit" target="_blank" rel="noopener">📄 Sample 3</a>
+            <a href="https://www.bluegrassvitamins.com/" target="_blank" rel="noopener">Website</a>
+            <a href="https://docs.google.com/document/d/1gvtUg0yqlhe7pCMnNHGSr7uRsRw-dhQ4hzMfNp4fPS4/view" target="_blank" rel="noopener">Sample 1</a>
+            <a href="https://docs.google.com/document/d/14UIfX8XIHrtElPnG8K98ESuNamThWlFrOMPG6VQojYI/view" target="_blank" rel="noopener">Sample 2</a>
+            <a href="https://docs.google.com/document/d/1HNfkaaZ4R1HcJRBIMNzG3GEuuYaW0CHtdvv1PNXhrcw/view" target="_blank" rel="noopener">Sample 3</a>
           </div>
         </article>
 
@@ -1515,8 +1830,8 @@ footer {
           <h3>Kaizen Electronics</h3>
           <p>Translated technical specs into human language. Made electronics sound interesting to people who aren't tech nerds.</p>
           <div class="link-row">
-            <a href="https://kaizenelectrics.com/" target="_blank" rel="noopener">🌐 Website</a>
-            <a href="https://docs.google.com/document/d/1YB4RdSX9Tju01sOhFlWA_hlCmFNHlSI4Z-c2SzBZ1gA/edit" target="_blank" rel="noopener">📄 Portfolio</a>
+            <a href="https://kaizenelectrics.com/" target="_blank" rel="noopener">Website</a>
+            <a href="https://docs.google.com/document/d/1YB4RdSX9Tju01sOhFlWA_hlCmFNHlSI4Z-c2SzBZ1gA/view" target="_blank" rel="noopener">Portfolio</a>
           </div>
         </article>
 
@@ -1525,9 +1840,9 @@ footer {
           <h3>Mana Fest Health</h3>
           <p>Created content that made health feel accessible, not preachy. Built email campaigns that people actually wanted to open.</p>
           <div class="link-row">
-            <a href="https://manafesthealth.com/" target="_blank" rel="noopener">🌐 Website</a>
-            <a href="https://docs.google.com/document/d/1-u5VoRyrK9V_BjQ5BQBdNWhb295OOYv61GVH-mO_CH8/edit" target="_blank" rel="noopener">📄 Sample 1</a>
-            <a href="https://docs.google.com/document/d/1xci4hK48Cr9_mAb0flJY82iF2GtljpghoCqTHmnKF68/edit" target="_blank" rel="noopener">📄 Sample 2</a>
+            <a href="https://manafesthealth.com/" target="_blank" rel="noopener">Website</a>
+            <a href="https://docs.google.com/document/d/1-u5VoRyrK9V_BjQ5BQBdNWhb295OOYv61GVH-mO_CH8/view" target="_blank" rel="noopener">Sample 1</a>
+            <a href="https://docs.google.com/document/d/1xci4hK48Cr9_mAb0flJY82iF2GtljpghoCqTHmnKF68/view" target="_blank" rel="noopener">Sample 2</a>
           </div>
         </article>
 
@@ -1536,7 +1851,7 @@ footer {
           <h3>A-DIY</h3>
           <p>Currently managing SEO website content, blogs, product copy, research, and Shopify e-commerce coordination for a professional DIY deck kit brand.</p>
           <div class="link-row">
-            <a href="https://a-diy.com/" target="_blank" rel="noopener">🌐 Website</a>
+            <a href="https://a-diy.com/" target="_blank" rel="noopener">Website</a>
           </div>
         </article>
       </div>
@@ -1556,27 +1871,29 @@ footer {
         <article class="timeline-item">
           <div class="timeline-header">
             <span class="timeline-role">Project Manager &amp; Client Success Lead</span>
-            <span class="timeline-dates">Jul 2025 to Present</span>
+            <span class="timeline-dates">Jul 2025 to Aug 2026 · Full-time</span>
           </div>
           <div class="timeline-company">The Emissary Agency</div>
-          <div class="timeline-location">🌍 Remote, USA</div>
+          <div class="timeline-location">Remote, USA</div>
           <ul>
-            <li>Bridge between client vision and execution for e-commerce brands.</li>
-            <li>Content strategies that rank and actually get read.</li>
-            <li>A/B tests on Shopify stores with measurable conversion wins (+30%).</li>
-            <li>Email campaigns with 35% open rates vs. industry average ~15%.</li>
-            <li>Coordinate designers, developers, and writers to keep projects on track.</li>
+            <li>Full-time role leading strategy and delivery for e-commerce brands.</li>
+            <li>Bridge between client vision and execution across content, design, and development.</li>
+            <li>Built content strategies that rank and get read.</li>
+            <li>Ran A/B tests on Shopify stores with measurable conversion wins (+30%).</li>
+            <li>Managed email campaigns with 35% open rates vs. industry average ~15%.</li>
+            <li>Coordinated designers, developers, and writers to keep projects on track.</li>
           </ul>
         </article>
 
         <article class="timeline-item">
           <div class="timeline-header">
             <span class="timeline-role">Social Media &amp; Email Marketing Executive</span>
-            <span class="timeline-dates">Aug 2025 to Jun 2026 · Part-time</span>
+            <span class="timeline-dates">Aug 2025 to Jun 2026 · Full-time</span>
           </div>
           <div class="timeline-company">ShipMagz</div>
-          <div class="timeline-location">🌍 Remote, Germany</div>
+          <div class="timeline-location">Remote, Germany</div>
           <ul>
+            <li>Full-time role on a different schedule from Emissary (day and night timing across both jobs).</li>
             <li>Managed social media for a global logistics company.</li>
             <li>Built strategic content calendars, not random posting.</li>
             <li>Tracked performance with Google Analytics and optimized winners.</li>
@@ -1588,10 +1905,10 @@ footer {
         <article class="timeline-item">
           <div class="timeline-header">
             <span class="timeline-role">Owner &amp; E-Commerce Manager</span>
-            <span class="timeline-dates">Jan 2024 to Dec 2024</span>
+            <span class="timeline-dates">Jan 2024 to Dec 2024 · Full-time</span>
           </div>
           <div class="timeline-company">Bell &amp; Buy (Founder)</div>
-          <div class="timeline-location">🌍 UAE Market</div>
+          <div class="timeline-location">UAE Market</div>
           <ul>
             <li>Built an e-commerce business from zero to 80% sales growth in one year.</li>
             <li>Handled product sourcing, Amazon &amp; Shopify listings, and operations.</li>
@@ -1603,10 +1920,10 @@ footer {
         <article class="timeline-item">
           <div class="timeline-header">
             <span class="timeline-role">Video Content Creator &amp; Instructor</span>
-            <span class="timeline-dates">May 2025 to Oct 2025</span>
+            <span class="timeline-dates">May 2025 to Oct 2025 · Contract</span>
           </div>
           <div class="timeline-company">PACE Online School</div>
-          <div class="timeline-location">🌍 Pakistan &amp; Saudi Arabia</div>
+          <div class="timeline-location">Pakistan &amp; Saudi Arabia</div>
           <ul>
             <li>Created enrollment-driving video content with CapCut.</li>
             <li>Managed student experience, progress tracking, and parent communication.</li>
@@ -1616,10 +1933,10 @@ footer {
         <article class="timeline-item">
           <div class="timeline-header">
             <span class="timeline-role">Academic Research Writer</span>
-            <span class="timeline-dates">Mar 2021 to Dec 2023</span>
+            <span class="timeline-dates">Mar 2021 to Dec 2023 · Full-time</span>
           </div>
           <div class="timeline-company">OHSPS Inc.</div>
-          <div class="timeline-location">🌍 Remote, Saudi Arabia</div>
+          <div class="timeline-location">Remote, Saudi Arabia</div>
           <ul>
             <li>Technical research writing for NEBOSH, NVQ, IOSH qualifications.</li>
             <li>Content strategies under strict deadlines and quality standards.</li>
@@ -1707,7 +2024,7 @@ footer {
         <div class="tool-cat"><h4>Design</h4><p>Canva · Figma · CapCut</p></div>
         <div class="tool-cat"><h4>Analytics</h4><p>Google Analytics · GTM · Clarity · BuiltWith</p></div>
         <div class="tool-cat"><h4>Productivity</h4><p>Notion · Slack · Google Workspace</p></div>
-        <div class="tool-cat"><h4>AI Tools</h4><p>Claude · ChatGPT · Content workflows</p></div>
+        <div class="tool-cat"><h4>Productivity Support</h4><p>Research workflows · Draft organization · Process tools</p></div>
       </div>
     </div>
   </section>
@@ -1716,24 +2033,48 @@ footer {
   <section class="contact-section" id="contact">
     <div class="container reveal">
       <h2>Let's Work <span style="color:var(--red-bright)">Together.</span></h2>
-      <p>Looking for a copywriter, a project manager, or e-commerce support? Need a mix? Send me a message with what you're looking for. We'll figure out the right fit.</p>
-      <div class="hero-actions" style="margin-bottom:34px;">
-        <a href="mailto:areebaarif999@gmail.com" class="btn btn-primary">Email Me</a>
-        <a href="https://wa.me/923104474940" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp</a>
-      </div>
-      <div class="contact-grid">
-        <a href="mailto:areebaarif999@gmail.com" class="contact-card">
-          <div class="c-icon">✉️</div>
-          <div class="c-label">Email</div>
-          <div class="c-value">areebaarif999@gmail.com</div>
-        </a>
+      <p>Looking for a copywriter, project manager, or e-commerce support? Send a message with the role and project details. Remote worldwide. Available for freelance and contract work.</p>
+
+      <form class="contact-form" id="hireForm">
+        <div class="form-grid">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" id="hireName" required placeholder="Your name">
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" id="hireEmail" required placeholder="you@company.com">
+          </label>
+        </div>
+        <label>
+          <span>What do you need help with?</span>
+          <select name="role" id="hireRole" required>
+            <option value="">Select an option</option>
+            <option value="SEO Copywriting">SEO Copywriting</option>
+            <option value="Project Management">Project Management</option>
+            <option value="Shopify / E-commerce">Shopify / E-commerce</option>
+            <option value="Email / Klaviyo">Email / Klaviyo</option>
+            <option value="Mix of services">Mix of services</option>
+          </select>
+        </label>
+        <label>
+          <span>Project details</span>
+          <textarea name="message" id="hireMessage" rows="5" required placeholder="Tell me about the role, timeline, and what you need."></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary form-submit">Send on WhatsApp</button>
+        <p class="form-note">This opens WhatsApp with your message ready. Tap send, and I get it instantly on +92 310 4474940.</p>
+      </form>
+
+      <div class="contact-grid" style="margin-top:34px;">
         <a href="https://wa.me/923104474940" class="contact-card" target="_blank" rel="noopener">
-          <div class="c-icon">💬</div>
           <div class="c-label">WhatsApp</div>
           <div class="c-value">+92 310 4474940</div>
         </a>
+        <a href="mailto:areebaarif999@gmail.com" class="contact-card">
+          <div class="c-label">Email</div>
+          <div class="c-value">areebaarif999@gmail.com</div>
+        </a>
         <a href="https://www.linkedin.com/in/areebaarif/" class="contact-card" target="_blank" rel="noopener">
-          <div class="c-icon">🔗</div>
           <div class="c-label">LinkedIn</div>
           <div class="c-value">linkedin.com/in/areebaarif</div>
         </a>
@@ -1797,6 +2138,26 @@ footer {
       mobileJumpBtn.setAttribute('aria-label', 'Go to Home');
     }
   });
+
+  const hireForm = document.getElementById('hireForm');
+  if (hireForm) {
+    hireForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('hireName').value.trim();
+      const email = document.getElementById('hireEmail').value.trim();
+      const role = document.getElementById('hireRole').value.trim();
+      const message = document.getElementById('hireMessage').value.trim();
+
+      const text =
+        `Hi Areeba, I found your portfolio.\n\n` +
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Need help with: ${role}\n\n` +
+        `Project details:\n${message}`;
+
+      window.open(`https://wa.me/923104474940?text=${encodeURIComponent(text)}`, '_blank');
+    });
+  }
 </script>
 </body>
 </html>
